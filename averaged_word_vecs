@@ -1,0 +1,131 @@
+# import modules & set up logging
+import gensim, logging, os
+from scipy import spatial
+import numpy as np
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+ 
+
+########### Word2Vec on training wiki data #################
+# INPUT in a single directory, place each scraped article in it's own file. In each file, we will scrape things 
+
+# sentences = [['first', 'sentence'], ['second', 'sentence']]
+# # train word2vec on the two sentences
+# model = gensim.models.Word2Vec(sentences, min_count=1)
+dimension = 100
+class MySentences(object):
+    def __init__(self, dirname):
+        self.dirname = dirname
+ 
+    def __iter__(self):
+        for fname in os.listdir(self.dirname):
+            for line in open(os.path.join(self.dirname, fname)):
+                yield line.split()
+ 
+train_sentences = MySentences('training_articles') # a memory-friendly iterator
+print "training...."
+model = gensim.models.Word2Vec(train_sentences, min_count=1, size=dimension)
+#train the model? 
+
+
+
+########### Average word vector calculations of testing wiki data #################
+# INPUT: in a single directory, place each scraped article in it's own file. In each file, we will scrape things 
+
+class MyArticles(object):
+    def __init__(self, dirname):
+        self.dirname = dirname
+ 
+    def articles(self):
+        for fname in os.listdir(self.dirname):
+        	file_as_string = open(os.path.join(self.dirname, fname)).read()
+        	yield file_as_string.split()
+
+testing_articles = MyArticles('testing_articles')
+
+
+def makeFeatureVec(words, model, num_features):
+    # Function to average all of the word vectors in a given
+    # paragraph
+    #
+    # Pre-initialize an empty numpy array (for speed)
+    featureVec = np.zeros((num_features,),dtype="float32")
+    #
+    nwords = 0.
+    # 
+    # Index2word is a list that contains the names of the words in 
+    # the model's vocabulary. Convert it to a set, for speed 
+    index2word_set = set(model.wv.index2word)
+    #
+    # Loop over each word in the review and, if it is in the model's
+    # vocaublary, add its feature vector to the total
+    for word in words:
+        if word in index2word_set: 
+            nwords = nwords + 1.
+            featureVec = np.add(featureVec,model[word])
+    # 
+    # Divide the result by the number of words to get the average
+    featureVec = np.divide(featureVec,nwords)
+    return featureVec
+
+
+def getAvgFeatureVecs(reviews, model, num_features):
+    # Given a set of reviews (each one a list of words), calculate 
+    # the average feature vector for each one and return a 2D numpy array 
+    # 
+    # Initialize a counter
+    counter = 0.
+    # 
+    # Preallocate a 2D numpy array, for speed
+    reviewFeatureVecs = np.zeros((len(reviews),num_features),dtype="float32")
+    # 
+    # Loop through the reviews
+    for review in reviews:
+       #
+       # Print a status message every 1000th review
+       if counter%1000. == 0.:
+           print "Article %d of %d" % (counter, len(reviews))
+       # 
+       # Call the function (defined above) that makes average feature vectors
+       print counter
+       print type(counter)
+       reviewFeatureVecs[int(counter)] = makeFeatureVec(review, model, num_features)
+       #
+       # Increment the counter
+       counter = counter + 1.
+    return reviewFeatureVecs
+
+# ****************************************************************
+# Calculate average feature vectors for testing set
+
+print "Creating average feature vecs for test articles..."
+
+clean_test_articles = []
+for article in testing_articles.articles():
+    clean_test_articles.append(article)
+testDataVecs = getAvgFeatureVecs(clean_test_articles, model, dimension)
+
+# testDataVecs now holds a 2D matrix of (len(reviews),num_features) 
+# the average feature vector for each article! 
+
+
+########### Accuracy Evaluation  #################
+print "Evaluating Accuracy..."
+# TODO: This needs to be a mapping from 172 index to index in directory structure {2: [23, 54, 106]}
+article_map = {0: [1,1,0]}
+
+correct_count = 0
+# Loop through triplet data 
+num_test_triplets = len(article_map)
+for i in range(0, num_test_triplets):
+	article_1_index = article_map[i][0]
+	article_2_index = article_map[i][1]
+	article_3_index = article_map[i][2]
+	# "The content of URLs one and two should be more similar than the content of URLs two and three"
+	# Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
+	if abs(1 - spatial.distance.cosine(testDataVecs[article_1_index], testDataVecs[article_2_index])) > abs(1 - spatial.distance.cosine(testDataVecs[article_2_index], testDataVecs[article_3_index])):
+		correct_count += 1 
+
+print "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
+
+
+
