@@ -1,5 +1,6 @@
 # import modules & set up logging
 import gensim, logging, os
+from gensim.corpora import Dictionary, HashDictionary, MmCorpus, WikiCorpus
 from scipy import spatial
 import numpy as np
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -21,7 +22,13 @@ class MySentences(object):
             for line in open(os.path.join(self.dirname, fname)):
                 yield line.split()
  
-train_sentences = MySentences('training_articles') # a memory-friendly iterator
+#train_sentences = MySentences('training_articles') # a memory-friendly iterator
+print "Loading wiki corpus for training..."
+wiki = WikiCorpus.load('small_wiki_subset/small_wiki_subset_bow.mm')
+print "Converting to sentence format..."
+train_sentences = wiki.get_texts()
+print train_sentences[0]
+#print sentences
 print "training...."
 model = gensim.models.Word2Vec(train_sentences, min_count=1, size=dimension)
 #train the model? 
