@@ -1,3 +1,10 @@
+# Ignore data files
+.bz2
+.mm
+.index
+.txt
+.tfidf_model
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
