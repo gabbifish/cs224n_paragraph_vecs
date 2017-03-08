@@ -10,3 +10,4 @@ print(mm)
 
 lda = gensim.models.ldamodel.LdaModel(corpus=mm, id2word=id2word, num_topics=100, update_every=1, chunksize=10000, passes=1)
 lda.print_topics(20)
+lda.save("small_lda_model")
