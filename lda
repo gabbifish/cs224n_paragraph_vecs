@@ -55,32 +55,6 @@ class MyArticles(object):
 testing_articles = MyArticles('testing_articles/articles')
 
 
-def makeFeatureVec(words, model, num_features):
-    # Function to average all of the word vectors in a given
-    # paragraph
-    #
-    # Pre-initialize an empty numpy array (for speed)
-    featureVec = np.zeros((num_features,),dtype="float32")
-    #
-    nwords = 0.
-    # 
-    # Index2word is a list that contains the names of the words in 
-    # the model's vocabulary. Convert it to a set, for speed 
-    index2word_set = set(model.wv.index2word)
-    #
-    # Loop over each word in the review and, if it is in the model's
-    # vocaublary, add its feature vector to the total
-    for word in words:
-        if word in index2word_set: 
-            nwords = nwords + 1.
-            featureVec = np.add(featureVec,model[word])
-    # 
-    # Divide the result by the number of words to get the average
-    if nwords == 0 :
-        return featureVec
-    featureVec = np.divide(featureVec,nwords)
-    return featureVec
-
 
 def getAvgFeatureVecs(reviews, model, num_features):
     # Given a set of reviews (each one a list of words), calculate 
@@ -92,19 +66,19 @@ def getAvgFeatureVecs(reviews, model, num_features):
     # Preallocate a 2D numpy array, for speed
     reviewFeatureVecs = np.zeros((len(reviews),num_features),dtype="float32")
     #
-    reviews_chained = reviews 
-#list(chain.from_iterable(reviews)) 
-    #print reviews_chained[0]
-    #print "JHALLP"
+    print reviews[0]
+    print "XXXX should be a list of words"
     dictionary = gensim.corpora.Dictionary(reviews)
-    # Loop through the reviews
+    # Loop through the reviewsdimensio
     for review in reviews:
 #        print review
-        doc = list(review)
-#        print doc
+        #doc = list(review)
+        print doc
 #        break
         doc = dictionary.doc2bow(doc)
         doc = model[doc]    
+        print doc
+        break
    #
        # Print a status message every 1000th review
         if counter%1000. == 0.:
@@ -114,7 +88,7 @@ def getAvgFeatureVecs(reviews, model, num_features):
         print counter
       # print type(counter)
         print len(doc)
-#        reviewFeatureVecs[int(counter)] = doc
+        reviewFeatureVecs[int(counter)] = doc
 #makeFeatureVec(review, model, num_features)
        #
        # Increment the counter
@@ -124,7 +98,7 @@ def getAvgFeatureVecs(reviews, model, num_features):
 # ****************************************************************
 # Calculate average feature vectors for testing set
 
-print "Creating average feature vecs for test articles..."
+print "Creating document feature vecs for test articles..."
 
 clean_test_articles = []
 count = 0
