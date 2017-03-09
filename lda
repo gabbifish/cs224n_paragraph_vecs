@@ -75,10 +75,7 @@ def getAvgFeatureVecs(reviews, model, num_features):
         #doc = list(review)
 #        break
         doc = dictionary.doc2bow(review)
-        print doc
         doc = model[doc]    
-        print doc
-        break
    #
        # Print a status message every 1000th review
         if counter%1000. == 0.:
