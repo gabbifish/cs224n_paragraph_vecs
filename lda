@@ -56,40 +56,31 @@ testing_articles = MyArticles('testing_articles/articles')
 
 
 
-def getAvgFeatureVecs(reviews, model, num_features):
+def getFeatureVec(dictionary, reviews, model, review_index):
     # Given a set of reviews (each one a list of words), calculate 
     # the average feature vector for each one and return a 2D numpy array 
-    # 
-    # Initialize a counter
-    counter = 0.
-    # 
-    # Preallocate a 2D numpy array, for speed
-    reviewFeatureVecs = np.zeros((len(reviews),num_features),dtype="float32")
     #
 
     #reviews seems to be correct format...
-    dictionary = gensim.corpora.Dictionary(reviews)
     # Loop through the reviewsdimensio
-    for review in reviews:
+    review in reviews[review_index]
 #        print review
-        #doc = list(review)
+    #doc = list(review)
 #        break
-        doc = dictionary.doc2bow(review)
-        doc = model[doc]    
-   #
-       # Print a status message every 1000th review
-        if counter%1000. == 0.:
-           print "Article %d of %d" % (counter, len(reviews))
-       # 
-       # Call the function (defined above) that makes average feature vectors
-        print counter
-      # print type(counter)
-        print len(doc)
-        reviewFeatureVecs[int(counter)] = doc
+    doc = dictionary.doc2bow(review)
+    doc = model[doc]    
+#
+   # Print a status message every 1000th review
+    if counter%1000. == 0.:
+       print "Article %d of %d" % (counter, len(reviews))
+   # 
+   # Call the function (defined above) that makes average feature vectors
+  # print type(counter)
+    print len(doc)
+        #reviewFeatureVecs[int(counter)] = doc
 #makeFeatureVec(review, model, num_features)
        #
        # Increment the counter
-        counter = counter + 1.
     return reviewFeatureVecs
 
 # ****************************************************************
@@ -106,7 +97,8 @@ for article in testing_articles.articles():
     article = [line.decode('utf-8','ignore').encode("utf-8") for line in article]
 #    break
     clean_test_articles.append(article)
-testDataVecs = getAvgFeatureVecs(clean_test_articles, model, dimension)
+dictionary = gensim.corpora.Dictionary(reviews)
+#testDataVecs = getAvgFeatureVecs(dictionary, clean_test_articles, model, dimension)
 
 # testDataVecs now holds a 2D matrix of (len(reviews),num_features) 
 # the average feature vector for each article! 
@@ -126,9 +118,9 @@ for i in range(0, num_test_triplets):
 	article_3_index = article_map[i][2]
 	# "The content of URLs one and two should be more similar than the content of URLs two and three"
 	# Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
-        dense1 = gensim.matutils.sparse2full(testDataVecs[article_1_index], model.num_topics)
-        dense2 = gensim.matutils.sparse2full(testDataVecs[article_2_index], model.num_topics)
-	dense3 = gensim.matutils.sparse2full(testDataVecs[article_3_index], model.num_topics)        
+    dense1 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_1_index), model.num_topics)
+    dense2 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_2_index), model.num_topics)
+	dense3 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_3_index), model.num_topics)        
 	sim12 = np.sqrt(0.5 * ((np.sqrt(dense1) - np.sqrt(dense2))**2).sum())
 	sim23 = np.sqrt(0.5 * ((np.sqrt(dense2) - np.sqrt(dense3))**2).sum())
 	if abs(sim12) > abs(sim23):
