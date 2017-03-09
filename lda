@@ -66,14 +66,13 @@ def getAvgFeatureVecs(reviews, model, num_features):
     # Preallocate a 2D numpy array, for speed
     reviewFeatureVecs = np.zeros((len(reviews),num_features),dtype="float32")
     #
-    print reviews[0]
-    print "XXXX should be a list of words"
+
+    #reviews seems to be correct format...
     dictionary = gensim.corpora.Dictionary(reviews)
     # Loop through the reviewsdimensio
     for review in reviews:
 #        print review
         #doc = list(review)
-        print doc
 #        break
         doc = dictionary.doc2bow(doc)
         doc = model[doc]    
@@ -103,7 +102,7 @@ print "Creating document feature vecs for test articles..."
 clean_test_articles = []
 count = 0
 for article in testing_articles.articles():
-    print count
+    #print count
     count = count + 1
 #    print article
     article = [line.decode('utf-8','ignore').encode("utf-8") for line in article]
