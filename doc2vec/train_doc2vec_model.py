@@ -7,8 +7,7 @@ import multiprocessing
 
 from gensim.corpora import  WikiCorpus
 from gensim.models import Word2Vec, Doc2Vec
-from gensim.models.word2vec import LineSentence
-
+from gensim.models.doc2vec import TaggedLineDocument
 
 if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])
@@ -25,7 +24,7 @@ if __name__ == '__main__':
         sys.exit(1)
     inp, outp = sys.argv[1:3]
 
-    model = Doc2Vec(LineSentence(inp), size=400, window=5, min_count=5, workers=multiprocessing.cpu_count())
+    model = Doc2Vec(TaggedLineDocument(inp), size=400, window=5, min_count=5, workers=multiprocessing.cpu_count())
 
     # trim unneeded model memory = use (much) less RAM
     model.init_sims(replace=True)
