@@ -113,14 +113,14 @@ correct_count = 0
 # Loop through triplet data 
 num_test_triplets = len(article_map)
 for i in range(0, num_test_triplets):
-	article_1_index = article_map[i][0]
-	article_2_index = article_map[i][1]
-	article_3_index = article_map[i][2]
+    article_1_index = article_map[i][0]
+    article_2_index = article_map[i][1]
+    article_3_index = article_map[i][2]
 	# "The content of URLs one and two should be more similar than the content of URLs two and three"
 	# Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
     dense1 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_1_index), model.num_topics)
     dense2 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_2_index), model.num_topics)
-	dense3 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_3_index), model.num_topics)        
+    dense3 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_3_index), model.num_topics)        
 	sim12 = np.sqrt(0.5 * ((np.sqrt(dense1) - np.sqrt(dense2))**2).sum())
 	sim23 = np.sqrt(0.5 * ((np.sqrt(dense2) - np.sqrt(dense3))**2).sum())
 	if abs(sim12) > abs(sim23):
