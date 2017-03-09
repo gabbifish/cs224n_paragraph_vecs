@@ -65,9 +65,9 @@ def getFeatureVec(dictionary, reviews, model, review_index):
     # Loop through the reviewsdimensio
     review in reviews[review_index]
 #        print review
-    #doc = list(review)
+    doc = list(review)
 #        break
-    doc = dictionary.doc2bow(review)
+    doc = dictionary.doc2bow(doc)
     doc = model[doc]    
 #
    # Print a status message every 1000th review
