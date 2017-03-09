@@ -71,8 +71,8 @@ def getFeatureVec(dictionary, reviews, model, review_index):
     doc = model[doc]    
 #
    # Print a status message every 1000th review
-    if counter%1000. == 0.:
-       print "Article %d of %d" % (counter, len(reviews))
+   # if counter%1000. == 0.:
+    #   print "Article %d of %d" % (counter, len(reviews))
    # 
    # Call the function (defined above) that makes average feature vectors
   # print type(counter)
@@ -81,7 +81,7 @@ def getFeatureVec(dictionary, reviews, model, review_index):
 #makeFeatureVec(review, model, num_features)
        #
        # Increment the counter
-    return reviewFeatureVecs
+    return doc
 
 # ****************************************************************
 # Calculate average feature vectors for testing set
