@@ -63,7 +63,7 @@ def getFeatureVec(dictionary, reviews, model, review_index):
 
     #reviews seems to be correct format...
     # Loop through the reviewsdimensio
-    review in reviews[review_index]
+    review = reviews[review_index]
 #        print review
     doc = list(review)
 #        break
