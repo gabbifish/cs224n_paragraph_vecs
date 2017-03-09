@@ -97,7 +97,7 @@ for article in testing_articles.articles():
     article = [line.decode('utf-8','ignore').encode("utf-8") for line in article]
 #    break
     clean_test_articles.append(article)
-dictionary = gensim.corpora.Dictionary(clean_test_articles)
+dictionary = gensim.corpora.Dictionary.load('small_wiki_subset/small_wiki_subset_dict.dict')
 #testDataVecs = getAvgFeatureVecs(dictionary, clean_test_articles, model, dimension)
 
 # testDataVecs now holds a 2D matrix of (len(reviews),num_features) 
