@@ -6,7 +6,7 @@ import sys
 import multiprocessing
 
 from gensim.corpora import  WikiCorpus
-from gensim.models import Word2Vec
+from gensim.models import Word2Vec, Doc2Vec
 from gensim.models.word2vec import LineSentence
 
 
