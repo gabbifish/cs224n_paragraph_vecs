@@ -9,6 +9,6 @@ mm = gensim.corpora.MmCorpus('small_wiki_subset_tfidf.mm')
 print(mm)
 id2word.save('small_wiki_subset_dict.dict')
 
-lda = gensim.models.ldamodel.LdaModel(corpus=mm, id2word=id2word, alpha=[0.1] * 100, iterations=2000, num_topics=100, update_every=1, chunksize=10000, passes=1)
+lda = gensim.models.ldamodel.LdaModel(corpus=mm, id2word=id2word, alpha=[0.1] * 100, iterations=10000, num_topics=100, update_every=1, chunksize=10000, passes=1)
 lda.print_topics(20)
 lda.save("small_lda_model")
