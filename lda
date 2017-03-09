@@ -63,16 +63,16 @@ def getFeatureVec(dictionary, reviews, model, review_index):
 
     #reviews seems to be correct format...
     # Loop through the reviewsdimensio
-    review in reviews[review_index]
+    review = reviews[review_index]
 #        print review
-    #doc = list(review)
+    doc = list(review)
 #        break
-    doc = dictionary.doc2bow(review)
+    doc = dictionary.doc2bow(doc)
     doc = model[doc]    
 #
    # Print a status message every 1000th review
-    if counter%1000. == 0.:
-       print "Article %d of %d" % (counter, len(reviews))
+   # if counter%1000. == 0.:
+    #   print "Article %d of %d" % (counter, len(reviews))
    # 
    # Call the function (defined above) that makes average feature vectors
   # print type(counter)
@@ -81,7 +81,7 @@ def getFeatureVec(dictionary, reviews, model, review_index):
 #makeFeatureVec(review, model, num_features)
        #
        # Increment the counter
-    return reviewFeatureVecs
+    return doc
 
 # ****************************************************************
 # Calculate average feature vectors for testing set
@@ -97,7 +97,7 @@ for article in testing_articles.articles():
     article = [line.decode('utf-8','ignore').encode("utf-8") for line in article]
 #    break
     clean_test_articles.append(article)
-dictionary = gensim.corpora.Dictionary(reviews)
+dictionary = gensim.corpora.Dictionary.load('small_wiki_subset/small_wiki_subset_dict.dict')
 #testDataVecs = getAvgFeatureVecs(dictionary, clean_test_articles, model, dimension)
 
 # testDataVecs now holds a 2D matrix of (len(reviews),num_features) 
@@ -113,18 +113,18 @@ correct_count = 0
 # Loop through triplet data 
 num_test_triplets = len(article_map)
 for i in range(0, num_test_triplets):
-	article_1_index = article_map[i][0]
-	article_2_index = article_map[i][1]
-	article_3_index = article_map[i][2]
+    article_1_index = article_map[i][0]
+    article_2_index = article_map[i][1]
+    article_3_index = article_map[i][2]
 	# "The content of URLs one and two should be more similar than the content of URLs two and three"
 	# Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
     dense1 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_1_index), model.num_topics)
     dense2 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_2_index), model.num_topics)
-	dense3 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_3_index), model.num_topics)        
-	sim12 = np.sqrt(0.5 * ((np.sqrt(dense1) - np.sqrt(dense2))**2).sum())
-	sim23 = np.sqrt(0.5 * ((np.sqrt(dense2) - np.sqrt(dense3))**2).sum())
-	if abs(sim12) > abs(sim23):
-		correct_count += 1 
+    dense3 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_3_index), model.num_topics)        
+    hell12 = np.sqrt(0.5 * ((np.sqrt(dense1) - np.sqrt(dense2))**2).sum())
+    hell23 = np.sqrt(0.5 * ((np.sqrt(dense2) - np.sqrt(dense3))**2).sum())
+    if abs(hell12) < abs(hell23):
+        correct_count += 1 
 
 print "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
 
