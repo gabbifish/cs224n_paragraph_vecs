@@ -9,7 +9,6 @@ from gensim.corpora import  WikiCorpus
 from gensim.models import Word2Vec, Doc2Vec
 from gensim.models.doc2vec import TaggedLineDocument
 
-
 if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])
     logger = logging.getLogger(program)
