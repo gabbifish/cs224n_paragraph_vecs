@@ -17,9 +17,15 @@ dimension = 100
 class MySentences(object):
     def __init__(self, dirname):
         self.dirname = dirname
+        self.dir_list = os.listdir(self.dirname)
+        self.dir_list.sort()
+        
+
+            
  
     def __iter__(self):
-        for fname in os.listdir(self.dirname):
+        for fname in self.dir_list:
+            print fname
             for line in open(os.path.join(self.dirname, fname)):
                 yield line.split()
  
