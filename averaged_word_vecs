@@ -74,6 +74,7 @@ def makeFeatureVec(words, model, num_features):
     # Loop over each word in the review and, if it is in the model's
     # vocaublary, add its feature vector to the total
     for word in words:
+        print word
         if word in index2word_set: 
             nwords = nwords + 1.
             featureVec = np.add(featureVec,model[word])
@@ -104,8 +105,9 @@ def getAvgFeatureVecs(reviews, model, num_features):
        # 
        # Call the function (defined above) that makes average feature vectors
        print counter
-       print type(counter)
+       #print type(counter)
        reviewFeatureVecs[int(counter)] = makeFeatureVec(review, model, num_features)
+       break
        #
        # Increment the counter
        counter = counter + 1.
