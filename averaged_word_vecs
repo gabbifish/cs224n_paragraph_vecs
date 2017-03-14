@@ -13,7 +13,7 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
 # sentences = [['first', 'sentence'], ['second', 'sentence']]
 # # train word2vec on the two sentences
 # model = gensim.models.Word2Vec(sentences, min_count=1)
-dimension = 3000
+dimension = 500
 # class MySentences(object):
 #     def __init__(self, dirname):
 #         self.dirname = dirname
@@ -29,19 +29,19 @@ dimension = 3000
 #train_sentences = MySentences('training_articles') # a memory-friendly iterator
 print "Loading wiki corpus for training..."
 #print "Converting to sentence format..."
-inp = 'big_wiki_subset/big_wiki_subset.en.text'
+inp = 'small_wiki_subset/small_wiki_subset.en.text'
 train_sentences = LineSentence(inp)
 #print train_sentences[0]
 #print sentences
 #print "training...."
-model = gensim.models.Word2Vec(train_sentences, sg=0,hs=0, min_count=1, size=dimension)
+model = gensim.models.Word2Vec(train_sentences, sg=1,hs=0, min_count=1, size=dimension)
 #train the model? 
 # IMPORTANT!!!! various combinations of CBOW vs skip gram, hierarchical softmax  vs negative sampling
 # hs=0* neg sampling
 # hs=1 hierarchical softmax 
 # sg=0* CBOW
 # sg=1 skip-gram
-model.save('big_wiki_subset_ns_cbow_3000.en.model')
+model.save('small_wiki_subset_ng_sg_500.en.model')
 
 # print "loading vectors"
 # model = gensim.models.Word2Vec.load('big_wiki_subset_ns_cbow.en.text')
