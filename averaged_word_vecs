@@ -27,21 +27,21 @@ class MySentences(object):
 print "Loading wiki corpus for training..."
 #print "Converting to sentence format..."
 inp = 'big_wiki_subset/big_wiki_subset.en.text'
-train_sentences = LineSentence(inp)
+#train_sentences = LineSentence(inp)
 #print train_sentences[0]
 #print sentences
 #print "training...."
-model = gensim.models.Word2Vec(train_sentences, sg=0,hs=0, min_count=1, size=dimension)
+#model = gensim.models.Word2Vec(train_sentences, sg=0,hs=0, min_count=1, size=dimension)
 #train the model? 
 # IMPORTANT!!!! various combinations of CBOW vs skip gram, hierarchical softmax  vs negative sampling
 # hs=0* neg sampling
 # hs=1 hierarchical softmax 
 # sg=0* CBOW
 # sg=1 skip-gram
-model.save('big_wiki_subset_ns_cbow.en.text')
+#model.save('big_wiki_subset_ns_cbow.en.text')
 
-#print "loading vectors"
-#model = gensim.models.Word2Vec.load('word2vec/small_wiki_subset.en.word2vec.model')
+print "loading vectors"
+model = gensim.models.Word2Vec.load('big_wiki_subset_ns_cbow.en.text')
 
 ########### Average word vector calculations of testing wiki data #################
 # INPUT: in a single directory, place each scraped article in it's own file. In each file, we will scrape things 
