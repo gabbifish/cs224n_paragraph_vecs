@@ -53,8 +53,8 @@ class MyArticles(object):
     def articles(self):
         for fname in os.listdir(self.dirname):
             print fname
-        	file_as_string = open(os.path.join(self.dirname, fname)).read()
-        	yield file_as_string.split()
+            file_as_string = open(os.path.join(self.dirname, fname)).read()
+            yield file_as_string.split()
 
 testing_articles = MyArticles('testing_articles/articles')
 
