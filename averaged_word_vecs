@@ -46,6 +46,10 @@ inp = 'big_wiki_subset/big_wiki_subset.en.text'
 print "loading vectors"
 model = gensim.models.Word2Vec.load('big_wiki_subset_ns_cbow.en.text')
 
+
+dir_sorted_list = os.listdir('testing_articles/articles')
+dir_sorted_list.sort()
+
 ########### Average word vector calculations of testing wiki data #################
 # INPUT: in a single directory, place each scraped article in it's own file. In each file, we will scrape things 
 
@@ -148,10 +152,15 @@ for i in range(0, num_test_triplets):
 	article_1_index = article_map[i][0]
 	article_2_index = article_map[i][1]
 	article_3_index = article_map[i][2]
+    print "+++++++++++++++"
+    print dir_sorted_list[article_1_index]
+    print dir_sorted_list[article_2_index]
+    print dir_sorted_list[article_3_index]
 	# "The content of URLs one and two should be more similar than the content of URLs two and three"
 	# Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
 	if abs(1 - spatial.distance.cosine(testDataVecs[article_1_index], testDataVecs[article_2_index])) > abs(1 - spatial.distance.cosine(testDataVecs[article_2_index], testDataVecs[article_3_index])):
 		correct_count += 1 
+        print "Correct triplet"
 
 print "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
 
