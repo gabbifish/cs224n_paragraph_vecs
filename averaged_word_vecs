@@ -14,20 +14,17 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
 # # train word2vec on the two sentences
 # model = gensim.models.Word2Vec(sentences, min_count=1)
 dimension = 100
-class MySentences(object):
-    def __init__(self, dirname):
-        self.dirname = dirname
-        self.dir_list = os.listdir(self.dirname)
-        self.dir_list.sort()
+# class MySentences(object):
+#     def __init__(self, dirname):
+#         self.dirname = dirname
+#         self.dir_list = os.listdir(self.dirname)
+#         self.dir_list.sort()
         
-
-            
- 
-    def __iter__(self):
-        for fname in self.dir_list:
-            print fname
-            for line in open(os.path.join(self.dirname, fname)):
-                yield line.split()
+#     def __iter__(self):
+#         for fname in self.dir_list:
+#             print fname
+#             for line in open(os.path.join(self.dirname, fname)):
+#                 yield line.split()
  
 #train_sentences = MySentences('training_articles') # a memory-friendly iterator
 print "Loading wiki corpus for training..."
@@ -55,9 +52,11 @@ model = gensim.models.Word2Vec.load('big_wiki_subset_ns_cbow.en.text')
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
- 
+        self.dir_list = os.listdir(self.dirname)
+        self.dir_list.sort()
+
     def articles(self):
-        for fname in os.listdir(self.dirname):
+        for fname in self.dir_list:
             print fname
             file_as_string = open(os.path.join(self.dirname, fname)).read()
             yield file_as_string.split()
