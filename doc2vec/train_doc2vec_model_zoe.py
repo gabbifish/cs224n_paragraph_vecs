@@ -38,6 +38,7 @@ if __name__ == '__main__':
         Doc2Vec(dm=1, docvecs_mapfile="small_wiki_subset.docvecs_map.dmm", dm_mean=1, size=100, window=10, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
     ]
 
+    alldocs = TaggedLineDocument(inp)
     # speed setup by sharing results of 1st model's vocabulary scan
     simple_models[0].build_vocab(alldocs)  # PV-DM/concat requires one special NULL word so it serves as template
     print(simple_models[0])
@@ -56,7 +57,7 @@ if __name__ == '__main__':
     #Train all 5 models 
     for name, train_model in models_by_name.items():
         print name
-        train_model.train(TaggedLineDocument(inp))
+        train_model.train(alldocs)
         train_model.init_sims(replace=True)
         train_model.save('small_wiki_subset.' + str(name) + '.model')
 
