@@ -43,8 +43,8 @@ if __name__ == '__main__':
     # speed setup by sharing results of 1st model's vocabulary scan
     # simple_models[0].build_vocab(alldocs)  # PV-DM/concat requires one special NULL word so it serves as template
     # print(simple_models[0])
-    # for model in simple_models[1:]:
-    #     model.reset_from(simple_models[0])
+    for model in simple_models[1:]:
+        model.build_vocab(alldocs)
     # print(model)
 
     models_by_name = OrderedDict((str(model), model) for model in simple_models)
