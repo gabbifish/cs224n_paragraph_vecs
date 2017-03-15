@@ -9,6 +9,7 @@ from gensim.corpora import  WikiCorpus
 from gensim.models import Word2Vec, Doc2Vec
 from gensim.models.doc2vec import TaggedLineDocument
 from gensim.test.test_doc2vec import ConcatenatedDoc2Vec
+from collections import OrderedDict
 
 if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])
