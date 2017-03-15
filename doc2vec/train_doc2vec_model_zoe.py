@@ -55,12 +55,14 @@ if __name__ == '__main__':
     print models_by_name.keys()
 
     #Train all 5 models 
+    model_indx = 1
     for name, train_model in models_by_name.items():
         print name
         train_model.build_vocab(alldocs)
         train_model.train(alldocs)
         train_model.init_sims(replace=True)
-        train_model.save('small_wiki_subset.' + str(name) + '.model')
+        train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
+        model_indx = model_indx + 1
 
 
 
