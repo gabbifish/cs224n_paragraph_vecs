@@ -43,8 +43,8 @@ if __name__ == '__main__':
     # speed setup by sharing results of 1st model's vocabulary scan
     # simple_models[0].build_vocab(alldocs)  # PV-DM/concat requires one special NULL word so it serves as template
     # print(simple_models[0])
-    for model in simple_models[1:]:
-        model.build_vocab(alldocs)
+    # for model in simple_models[1:]:
+    #     model.build_vocab(alldocs)
     # print(model)
 
     models_by_name = OrderedDict((str(model), model) for model in simple_models)
@@ -52,12 +52,12 @@ if __name__ == '__main__':
     models_by_name['dbow+dmm'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[2]])
     models_by_name['dbow+dmc'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[0]])
 
-
     print models_by_name.keys()
 
     #Train all 5 models 
     for name, train_model in models_by_name.items():
         print name
+        train_model.build_vocab(alldocs)
         train_model.train(alldocs)
         train_model.init_sims(replace=True)
         train_model.save('small_wiki_subset.' + str(name) + '.model')
