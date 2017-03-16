@@ -8,32 +8,32 @@ import multiprocessing
 from gensim.corpora import  WikiCorpus
 from gensim.models import Word2Vec, Doc2Vec
 from gensim.models.doc2vec import TaggedLineDocument
-from gensim.test.test_doc2vec import ConcatenatedDocVecs
+from gensim.test.test_doc2vec import ConcatenatedDoc2Vec
 from collections import OrderedDict
 
 
-class ConcatenatedDoc2Vec(object):
-    """
-    Concatenation of multiple models for reproducing the Paragraph Vectors paper.
-    Models must have exactly-matching vocabulary and document IDs. (Models should
-    be trained separately; this wrapper just returns concatenated results.)
-    """
-    def __init__(self, models):
-        self.models = models
-        if hasattr(models[0], 'docvecs'):
-            self.docvecs = ConcatenatedDocvecs([model.docvecs for model in models])
+# class ConcatenatedDoc2Vec(object):
+#     """
+#     Concatenation of multiple models for reproducing the Paragraph Vectors paper.
+#     Models must have exactly-matching vocabulary and document IDs. (Models should
+#     be trained separately; this wrapper just returns concatenated results.)
+#     """
+#     def __init__(self, models):
+#         self.models = models
+#         if hasattr(models[0], 'docvecs'):
+#             self.docvecs = ConcatenatedDocvecs([model.docvecs for model in models])
 
-    def __getitem__(self, token):
-        return np.concatenate([model[token] for model in self.models])
+#     def __getitem__(self, token):
+#         return np.concatenate([model[token] for model in self.models])
 
-    def infer_vector(self, document, alpha=0.1, min_alpha=0.0001, steps=5):
-        return np.concatenate([model.infer_vector(document, alpha, min_alpha, steps) for model in self.models])
+#     def infer_vector(self, document, alpha=0.1, min_alpha=0.0001, steps=5):
+#         return np.concatenate([model.infer_vector(document, alpha, min_alpha, steps) for model in self.models])
 
-    def train(self, ignored):
-        pass  # train subcomponents individually
+#     def train(self, ignored):
+#         pass  # train subcomponents individually
 
-    def build_vocab(self):
-        pass 
+#     def build_vocab(self):
+#         pass 
 
 
 if __name__ == '__main__':
