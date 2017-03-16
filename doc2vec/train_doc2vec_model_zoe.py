@@ -10,6 +10,12 @@ from gensim.models import Word2Vec, Doc2Vec
 from gensim.models.doc2vec import TaggedLineDocument
 from gensim.test.test_doc2vec import ConcatenatedDoc2Vec
 from collections import OrderedDict
+from gensim.models.doc2vec import DocvecsArray
+import gensim, logging, os
+from gensim.corpora import Dictionary, HashDictionary, MmCorpus, WikiCorpus
+from scipy import spatial
+import numpy as np
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 
 # class ConcatenatedDoc2Vec(object):
@@ -35,16 +41,20 @@ from collections import OrderedDict
 #     def build_vocab(self):
 #         pass 
 
+dimension = 100
+
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
-        self.dirlist = os.listdir(self.dirname)
-        self.dirlist.sort()
+    self.dir_list = os.listdir(self.dirname)
+    self.dir_list.sort()
 
     def articles(self):
-        for fname in self.dirlist:
+        for fname in self.dir_list:
             file_as_string = open(os.path.join(self.dirname, fname)).read()
             yield file_as_string.split()
+
+testing_articles = MyArticles('../testing_articles/articles')
 
 
 def makeFeatureVec(words, model, num_features):
@@ -92,17 +102,15 @@ def getAvgFeatureVecs(reviews, model, num_features):
            print "Article %d of %d" % (counter, len(reviews))
        #
        # Call the function (defined above) that makes average feature vectors
-       print counter
-       print type(counter)
+       # print counter
+       # print type(counter)
        reviewFeatureVecs[int(counter)] = makeFeatureVec(review, model, num_features)
        #
        # Increment the counter
        counter = counter + 1.
     return reviewFeatureVecs
 
-
 def get_accuracy(model):
-    testing_articles = MyArticles('../testing_articles/articles')
     # ****************************************************************
     # Calculate average feature vectors for testing set
 
@@ -119,6 +127,8 @@ def get_accuracy(model):
     # testDataVecs now holds a 2D matrix of (len(reviews),num_features)
     # the average feature vector for each article!
 
+    # Initialize DocVecs Map
+    docvecs_map = DocvecsArray("big_wiki_subset.docvecs_map.doctag_syn0")
 
     ########### Accuracy Evaluation  #################
     print "Evaluating Accuracy..."
@@ -129,13 +139,33 @@ def get_accuracy(model):
     # Loop through triplet data
     num_test_triplets = len(article_map)
     for i in range(0, num_test_triplets):
-        article_1_index = article_map[i][0] + 1
-        article_2_index = article_map[i][1] + 1
-        article_3_index = article_map[i][2] + 1
+        article_1_index = article_map[i][0] +1
+        article_2_index = article_map[i][1]+1
+        article_3_index = article_map[i][2]+1
         # "The content of URLs one and two should be more similar than the content of URLs two and three"
         # Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
-        if similarity_unseen_docs(model, clean_test_articles[article_1_index], clean_test_articles[article_2_index]) > similarity_unseen_docs(model, clean_test_articles[article_2_index], clean_test_articles[article_3_index]):
-        # if abs(1 - spatial.distance.cosine(testDataVecs[article_1_index], testDataVecs[article_2_index])) > abs(1 - spatial.distance.cosine(testDataVecs[article_2_index], testDataVecs[article_3_index])):
+        article1_wl = clean_test_articles[article_1_index]
+        article2_wl = clean_test_articles[article_2_index]
+        article3_wl = clean_test_articles[article_3_index]
+        try:
+            article_1_vec = model.infer_vector(clean_test_articles[article_1_index])
+        except Exception, e:
+            print "article 1 fucked up!"
+            print clean_test_articles[article_1_index]
+
+        try:
+            article_2_vec = model.infer_vector(clean_test_articles[article_2_index])
+        except Exception, e: 
+            print "article 2 fucked up!"
+                    print clean_test_articles[article_2_index]
+
+        try:
+            article_3_vec = model.infer_vector(clean_test_articles[article_3_index])
+        except Exception, e:
+            print "article 3 fucked up!"
+                    print clean_test_articles[article_3_index]
+        
+        if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
             correct_count += 1
 
     return "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
