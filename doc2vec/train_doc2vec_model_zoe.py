@@ -86,7 +86,7 @@ if __name__ == '__main__':
         if model_indx is not 4 and model_indx is not 5:
             train_model.build_vocab(alldocs)
         train_model.train(alldocs)
-        train_model.init_sims(replace=True)
+        #train_model.init_sims(replace=True)
         train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
         model_indx = model_indx + 1
 
