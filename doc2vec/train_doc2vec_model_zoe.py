@@ -46,8 +46,8 @@ dimension = 100
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
-    self.dir_list = os.listdir(self.dirname)
-    self.dir_list.sort()
+        self.dir_list = os.listdir(self.dirname)
+        self.dir_list.sort()
 
     def articles(self):
         for fname in self.dir_list:
