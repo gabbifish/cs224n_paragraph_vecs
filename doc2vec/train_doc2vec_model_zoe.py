@@ -38,8 +38,8 @@ from collections import OrderedDict
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
-    self.dirlist = os.listdir(self.dirname)
-    self.dirlist.sort()
+        self.dirlist = os.listdir(self.dirname)
+        self.dirlist.sort()
 
     def articles(self):
         for fname in self.dirlist:

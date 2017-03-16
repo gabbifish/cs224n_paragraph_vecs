@@ -48,8 +48,8 @@ model = gensim.models.Word2Vec.load('small_wiki_subset.en.doc2vec.model')
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
-	self.dirlist = os.listdir(self.dirname)
-	self.dirlist.sort()
+	    self.dirlist = os.listdir(self.dirname)
+	    self.dirlist.sort()
 
     def articles(self):
         for fname in self.dirlist:
