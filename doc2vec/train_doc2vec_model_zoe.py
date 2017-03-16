@@ -83,7 +83,7 @@ if __name__ == '__main__':
     model_indx = 1
     for name, train_model in models_by_name.items():
         print name
-        if model_indx != 4 or model_indx != 5:
+        if model_indx is not 4 and model_indx is not 5:
             train_model.build_vocab(alldocs)
         train_model.train(alldocs)
         train_model.init_sims(replace=True)
