@@ -38,9 +38,11 @@ from collections import OrderedDict
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
+    self.dirlist = os.listdir(self.dirname)
+    self.dirlist.sort()
 
     def articles(self):
-        for fname in os.listdir(self.dirname):
+        for fname in self.dirlist:
             file_as_string = open(os.path.join(self.dirname, fname)).read()
             yield file_as_string.split()
 
@@ -193,6 +195,7 @@ if __name__ == '__main__':
         if model_indx is not 4 and model_indx is not 5:
             train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
         else: 
+            print "calculating accuraccy"
             print get_accuracy(train_model)
         model_indx = model_indx + 1
 
