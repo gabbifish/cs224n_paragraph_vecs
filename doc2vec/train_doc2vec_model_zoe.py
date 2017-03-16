@@ -127,12 +127,12 @@ def get_accuracy(model):
     # Loop through triplet data
     num_test_triplets = len(article_map)
     for i in range(0, num_test_triplets):
-        article_1_index = article_map[i][0]
-        article_2_index = article_map[i][1]
-        article_3_index = article_map[i][2]
+        article_1_index = article_map[i][0] + 1
+        article_2_index = article_map[i][1] + 1
+        article_3_index = article_map[i][2] + 1
         # "The content of URLs one and two should be more similar than the content of URLs two and three"
         # Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
-        if similarity_unseen_docs(model, clean_test_articles[article_1_index], clean_test_articles[article_2_index]) > similarity_unseen_docs(model, clean_test_articles[article_2_index], clean_test_articles[article_3_index])
+        if similarity_unseen_docs(model, clean_test_articles[article_1_index], clean_test_articles[article_2_index]) > similarity_unseen_docs(model, clean_test_articles[article_2_index], clean_test_articles[article_3_index]):
         # if abs(1 - spatial.distance.cosine(testDataVecs[article_1_index], testDataVecs[article_2_index])) > abs(1 - spatial.distance.cosine(testDataVecs[article_2_index], testDataVecs[article_3_index])):
             correct_count += 1
 
