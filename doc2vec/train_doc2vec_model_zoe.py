@@ -36,7 +36,6 @@ class ConcatenatedDoc2Vec(object):
         pass 
 
 
-
 if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])
     logger = logging.getLogger(program)
@@ -84,7 +83,8 @@ if __name__ == '__main__':
     model_indx = 1
     for name, train_model in models_by_name.items():
         print name
-        train_model.build_vocab(alldocs)
+        if model_indx != 4 or model_indx != 5:
+            train_model.build_vocab(alldocs)
         train_model.train(alldocs)
         train_model.init_sims(replace=True)
         train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
