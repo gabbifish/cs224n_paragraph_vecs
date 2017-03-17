@@ -152,11 +152,11 @@ def get_accuracy(model, model_pair):
         article2_wl = clean_test_articles[article_2_index]
         article3_wl = clean_test_articles[article_3_index]
 
-        model_1 = model_pair[0].infer_vector(np.asarray(clean_test_articles[article_1_index])) 
-        model_2 = model_pair[1].infer_vector(clean_test_articles[article_1_index]) 
+        # model_1 = model_pair[0].infer_vector(np.asarray(clean_test_articles[article_1_index])) 
+        # model_2 = model_pair[1].infer_vector(clean_test_articles[article_1_index]) 
         try:
-            article_1_vec = np.concatenate([model_1, model_2])
-            #model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
+            #article_1_vec = np.concatenate([model_1, model_2])
+            model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
 
         except Exception, e:
             print "article 1 fucked up!"
@@ -175,11 +175,11 @@ def get_accuracy(model, model_pair):
             print "article 3 fucked up!"
             #print clean_test_articles[article_3_index]
         
-        if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
-            correct_count += 1
-
-        # if cosine_sim(article_1_vec, article_2_vec) > cosine_sim(article_2_vec, article_3_vec):
+        # if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
         #     correct_count += 1
+
+        if cosine_sim(article_1_vec, article_2_vec) > cosine_sim(article_2_vec, article_3_vec):
+            correct_count += 1
 
     return "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
 
