@@ -1,0 +1,225 @@
+# Machine Learning
+http://en.wikipedia.org/wiki/Deep_learning http://en.wikipedia.org/wiki/Machine_learning http://en.wikipedia.org/wiki/Computer_network
+http://en.wikipedia.org/wiki/Artificial_neural_network http://en.wikipedia.org/wiki/Convolutional_neural_network http://en.wikipedia.org/wiki/Fuzzy_logic
+http://en.wikipedia.org/wiki/Artificial_neural_network http://en.wikipedia.org/wiki/Convolutional_neural_network http://en.wikipedia.org/wiki/Bayesian_network
+http://en.wikipedia.org/wiki/K-means_clustering http://en.wikipedia.org/wiki/Mixture_model http://en.wikipedia.org/wiki/Artificial_neural_network
+http://en.wikipedia.org/wiki/Recurrent_neural_network http://en.wikipedia.org/wiki/Convolutional_neural_network http://en.wikipedia.org/wiki/Self-organizing_map
+http://en.wikipedia.org/wiki/Mean http://en.wikipedia.org/wiki/Variance http://en.wikipedia.org/wiki/Probability
+http://en.wikipedia.org/wiki/Decision_tree_learning http://en.wikipedia.org/wiki/Random_forest http://en.wikipedia.org/wiki/Statistical_classification
+http://en.wikipedia.org/wiki/Cluster_analysis http://en.wikipedia.org/wiki/K-means_clustering http://en.wikipedia.org/wiki/Linear_regression
+http://en.wikipedia.org/wiki/Generalized_linear_model http://en.wikipedia.org/wiki/General_linear_model http://en.wikipedia.org/wiki/Logit
+http://en.wikipedia.org/wiki/Dirichlet_process http://en.wikipedia.org/wiki/Chinese_restaurant_process http://en.wikipedia.org/wiki/Dirichlet_problem
+http://en.wikipedia.org/wiki/Probably_approximately_correct_learning http://en.wikipedia.org/wiki/VC_dimension http://en.wikipedia.org/wiki/DBSCAN
+
+# Subjects
+http://en.wikipedia.org/wiki/Physics http://en.wikipedia.org/wiki/Mathematics http://en.wikipedia.org/wiki/Psychology
+http://en.wikipedia.org/wiki/Computer_science http://en.wikipedia.org/wiki/Electrical_engineering http://en.wikipedia.org/wiki/Finance
+http://en.wikipedia.org/wiki/Accounting http://en.wikipedia.org/wiki/Finance http://en.wikipedia.org/wiki/Electrical_engineering
+http://en.wikipedia.org/wiki/Philosophy http://en.wikipedia.org/wiki/Psychology http://en.wikipedia.org/wiki/Neuroscience
+http://en.wikipedia.org/wiki/Economics http://en.wikipedia.org/wiki/Political_science http://en.wikipedia.org/wiki/Biology
+http://en.wikipedia.org/wiki/Chemistry http://en.wikipedia.org/wiki/Physics http://en.wikipedia.org/wiki/Anatomy
+
+# Politics
+http://en.wikipedia.org/wiki/Barack_Obama http://en.wikipedia.org/wiki/George_W._Bush http://en.wikipedia.org/wiki/Margaret_Thatcher
+http://en.wikipedia.org/wiki/Bill_Clinton http://en.wikipedia.org/wiki/Barack_Obama http://en.wikipedia.org/wiki/Franklin_D._Roosevelt
+http://en.wikipedia.org/wiki/Julius_Caesar http://en.wikipedia.org/wiki/Mark_Antony http://en.wikipedia.org/wiki/Barack_Obama
+
+# Companies
+http://en.wikipedia.org/wiki/Google http://en.wikipedia.org/wiki/Facebook http://en.wikipedia.org/wiki/Walmart
+http://en.wikipedia.org/wiki/Twitter http://en.wikipedia.org/wiki/Facebook http://en.wikipedia.org/wiki/Walmart
+http://en.wikipedia.org/wiki/Safeway_Inc. http://en.wikipedia.org/wiki/Walmart http://en.wikipedia.org/wiki/Twitter
+http://en.wikipedia.org/wiki/Chevron_Corporation http://en.wikipedia.org/wiki/Royal_Dutch_Shell http://en.wikipedia.org/wiki/SpaceX
+http://en.wikipedia.org/wiki/Apple_Inc. http://en.wikipedia.org/wiki/Samsung http://en.wikipedia.org/wiki/Sony
+http://en.wikipedia.org/wiki/Canon_Inc. http://en.wikipedia.org/wiki/Nikon http://en.wikipedia.org/wiki/Eastman_Kodak
+http://en.wikipedia.org/wiki/Adidas http://en.wikipedia.org/wiki/Nike,_Inc. http://en.wikipedia.org/wiki/Carbrini_Sportswear
+
+# Places
+http://en.wikipedia.org/wiki/Mountain_View,_California http://en.wikipedia.org/wiki/Palo_Alto,_California http://en.wikipedia.org/wiki/Los_Angeles
+http://en.wikipedia.org/wiki/Beijing http://en.wikipedia.org/wiki/Shanghai http://en.wikipedia.org/wiki/Los_Angeles
+http://en.wikipedia.org/wiki/Paris http://en.wikipedia.org/wiki/London http://en.wikipedia.org/wiki/Los_Angeles
+http://en.wikipedia.org/wiki/Los_Angeles http://en.wikipedia.org/wiki/San_Diego http://en.wikipedia.org/wiki/San_Jose,_California
+http://en.wikipedia.org/wiki/Cambridge http://en.wikipedia.org/wiki/Oxford http://en.wikipedia.org/wiki/San_Jose,_California
+http://en.wikipedia.org/wiki/Menlo_Park,_California http://en.wikipedia.org/wiki/Palo_Alto,_California http://en.wikipedia.org/wiki/Santa_Clara,_California
+http://en.wikipedia.org/wiki/British_Columbia http://en.wikipedia.org/wiki/Saskatchewan http://en.wikipedia.org/wiki/Chicago
+http://en.wikipedia.org/wiki/New_York_City http://en.wikipedia.org/wiki/Los_Angeles http://en.wikipedia.org/wiki/Toronto
+http://en.wikipedia.org/wiki/Chicago http://en.wikipedia.org/wiki/Los_Angeles http://en.wikipedia.org/wiki/Charlotte,_North_Carolina
+
+# Entrepreneurs
+http://en.wikipedia.org/wiki/Peter_Thiel http://en.wikipedia.org/wiki/Elon_Musk http://en.wikipedia.org/wiki/Sergey_Brin
+http://en.wikipedia.org/wiki/Sergey_Brin http://en.wikipedia.org/wiki/Sergey_Brin http://en.wikipedia.org/wiki/Eric_Schmidt
+
+# Universities
+http://en.wikipedia.org/wiki/University_of_California,_Berkeley http://en.wikipedia.org/wiki/Stanford_University http://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University
+http://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University http://en.wikipedia.org/wiki/Tsinghua_University http://en.wikipedia.org/wiki/University_of_California,_Berkeley
+http://en.wikipedia.org/wiki/University_of_Cambridge http://en.wikipedia.org/wiki/University_of_Oxford http://en.wikipedia.org/wiki/University_of_Michigan
+http://en.wikipedia.org/wiki/Harvard_University http://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology http://en.wikipedia.org/wiki/New_York_University
+http://en.wikipedia.org/wiki/University_of_Toronto http://en.wikipedia.org/wiki/Universit%C3%A9_de_Montr%C3%A9al http://en.wikipedia.org/wiki/University_of_Chicago
+
+# Months
+http://en.wikipedia.org/wiki/March http://en.wikipedia.org/wiki/February http://en.wikipedia.org/wiki/July
+http://en.wikipedia.org/wiki/September http://en.wikipedia.org/wiki/October http://en.wikipedia.org/wiki/June
+
+# Countries
+http://en.wikipedia.org/wiki/Vietnam http://en.wikipedia.org/wiki/Thailand http://en.wikipedia.org/wiki/India
+http://en.wikipedia.org/wiki/Korea http://en.wikipedia.org/wiki/Japan http://en.wikipedia.org/wiki/Mongolia
+http://en.wikipedia.org/wiki/England http://en.wikipedia.org/wiki/France http://en.wikipedia.org/wiki/Turkey
+http://en.wikipedia.org/wiki/Sweden http://en.wikipedia.org/wiki/Norway http://en.wikipedia.org/wiki/Russia
+http://en.wikipedia.org/wiki/Ukraine http://en.wikipedia.org/wiki/Belarus http://en.wikipedia.org/wiki/Sweden
+http://en.wikipedia.org/wiki/Mexico http://en.wikipedia.org/wiki/United_States http://en.wikipedia.org/wiki/Italy
+http://en.wikipedia.org/wiki/Brazil http://en.wikipedia.org/wiki/Brazil http://en.wikipedia.org/wiki/Canada
+http://en.wikipedia.org/wiki/Alaska http://en.wikipedia.org/wiki/United_States http://en.wikipedia.org/wiki/Russia
+http://en.wikipedia.org/wiki/India http://en.wikipedia.org/wiki/Sri_Lanka http://en.wikipedia.org/wiki/Saudi_Arabia
+http://en.wikipedia.org/wiki/Scotland http://en.wikipedia.org/wiki/England http://en.wikipedia.org/wiki/Netherlands
+http://en.wikipedia.org/wiki/South_Africa http://en.wikipedia.org/wiki/Tanzania http://en.wikipedia.org/wiki/Ivory_Coast
+http://en.wikipedia.org/wiki/Ivory_Coast http://en.wikipedia.org/wiki/Ghana http://en.wikipedia.org/wiki/Somalia
+http://en.wikipedia.org/wiki/Iraq http://en.wikipedia.org/wiki/Iran http://en.wikipedia.org/wiki/Venezuela
+http://en.wikipedia.org/wiki/Nepal http://en.wikipedia.org/wiki/Tibet http://en.wikipedia.org/wiki/Singapore
+http://en.wikipedia.org/wiki/Guinea http://en.wikipedia.org/wiki/Sierra_Leone http://en.wikipedia.org/wiki/Somalia
+
+# Conferences
+http://en.wikipedia.org/wiki/International_Conference_on_Machine_Learning http://en.wikipedia.org/wiki/Conference_on_Neural_Information_Processing_Systems http://en.wikipedia.org/wiki/International_Conference_on_Computer_Vision
+http://en.wikipedia.org/wiki/International_Conference_on_Computer_Vision http://en.wikipedia.org/wiki/International_Conference_on_Computer_Vision http://en.wikipedia.org/wiki/International_Conference_on_Machine_Learning
+http://en.wikipedia.org/wiki/International_Joint_Conference_on_Artificial_Intelligence http://en.wikipedia.org/wiki/International_Conference_on_Autonomous_Agents_and_Multiagent_Systems http://en.wikipedia.org/wiki/Conference_on_Human_Factors_in_Computing_Systems
+
+# Artists
+http://en.wikipedia.org/wiki/Lady_Gaga http://en.wikipedia.org/wiki/Britney_Spears http://en.wikipedia.org/wiki/Eminem
+http://en.wikipedia.org/wiki/NSYNC http://en.wikipedia.org/wiki/Backstreet_Boys http://en.wikipedia.org/wiki/Maroon_5
+http://en.wikipedia.org/wiki/Whitney_Houston http://en.wikipedia.org/wiki/Mariah_Carey http://en.wikipedia.org/wiki/Boyzone 
+http://en.wikipedia.org/wiki/Boyzone http://en.wikipedia.org/wiki/Westlife http://en.wikipedia.org/wiki/Michael_Jackson
+http://en.wikipedia.org/wiki/Miley_Cyrus http://en.wikipedia.org/wiki/Selena_Gomez http://en.wikipedia.org/wiki/Kanye_West
+http://en.wikipedia.org/wiki/Madonna_(entertainer) http://en.wikipedia.org/wiki/Lady_Gaga http://en.wikipedia.org/wiki/Nelly_Furtado
+http://en.wikipedia.org/wiki/Radiohead http://en.wikipedia.org/wiki/Muse_(band) http://en.wikipedia.org/wiki/The_Rolling_Stones
+
+# Books
+http://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People http://en.wikipedia.org/wiki/Think_and_Grow_Rich http://en.wikipedia.org/wiki/Romance_of_the_Three_Kingdoms
+http://en.wikipedia.org/wiki/Romance_of_the_Three_Kingdoms http://en.wikipedia.org/wiki/Journey_to_the_West http://en.wikipedia.org/wiki/Think_and_Grow_Rich
+http://en.wikipedia.org/wiki/The_Seven_Habits_of_Highly_Effective_People http://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People http://en.wikipedia.org/wiki/The_Richest_Man_in_Babylon_(book)
+http://en.wikipedia.org/wiki/The_Lovely_Bones http://en.wikipedia.org/wiki/The_Almost_Moon http://en.wikipedia.org/wiki/The_Book_Thief
+http://en.wikipedia.org/wiki/The_Canterbury_Tales http://en.wikipedia.org/wiki/The_Decameron http://en.wikipedia.org/wiki/Oedipus_the_King
+http://en.wikipedia.org/wiki/Great_Expectations http://en.wikipedia.org/wiki/David_Copperfield http://en.wikipedia.org/wiki/Invisible_Man
+http://en.wikipedia.org/wiki/Nineteen_Eighty-Four http://en.wikipedia.org/wiki/Animal_Farm http://en.wikipedia.org/wiki/Dune
+http://en.wikipedia.org/wiki/War_and_Peace http://en.wikipedia.org/wiki/Anna_Karenina http://en.wikipedia.org/wiki/The_Grapes_of_Wrath
+http://en.wikipedia.org/wiki/Harry_Potter http://en.wikipedia.org/wiki/The_Lord_of_the_Rings http://en.wikipedia.org/wiki/Twilight_(series)
+http://en.wikipedia.org/wiki/The_Da_Vinci_Code http://en.wikipedia.org/wiki/Angels_%26_Demons http://en.wikipedia.org/wiki/A_Thousand_Splendid_Suns
+http://en.wikipedia.org/wiki/Safe_Haven_(novel) http://en.wikipedia.org/wiki/The_Best_of_Me_(novel) http://en.wikipedia.org/wiki/Hollow_City_(novel)
+http://en.wikipedia.org/wiki/Fifty_Shades_of_Grey http://en.wikipedia.org/wiki/Bared_to_You http://en.wikipedia.org/wiki/The_Hunger_Games_(novel)
+http://en.wikipedia.org/wiki/The_Help http://en.wikipedia.org/wiki/The_Secret_Life_of_Bees http://en.wikipedia.org/wiki/The_Road
+http://en.wikipedia.org/wiki/Water_for_Elephants http://en.wikipedia.org/wiki/The_Help http://en.wikipedia.org/wiki/Divergent_(novel)
+
+# Scientists
+http://en.wikipedia.org/wiki/Isaac_Newton http://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz http://en.wikipedia.org/wiki/William_Blake
+http://en.wikipedia.org/wiki/Thomas_Edison http://en.wikipedia.org/wiki/Nikola_Tesla http://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz
+http://en.wikipedia.org/wiki/James_Clerk_Maxwell http://en.wikipedia.org/wiki/Albert_Einstein http://en.wikipedia.org/wiki/Nikola_Tesla
+http://en.wikipedia.org/wiki/Andrew_Ng http://en.wikipedia.org/wiki/Geoffrey_Hinton http://en.wikipedia.org/wiki/Jack_Ma
+http://en.wikipedia.org/wiki/Dennis_Ritchie http://en.wikipedia.org/wiki/Ken_Thompson http://en.wikipedia.org/wiki/Andrew_Ng
+
+# Sportspeople
+http://en.wikipedia.org/wiki/Cristiano_Ronaldo http://en.wikipedia.org/wiki/Lionel_Messi http://en.wikipedia.org/wiki/Mario_Balotelli
+http://en.wikipedia.org/wiki/Ronaldinho http://en.wikipedia.org/wiki/Ronaldo http://en.wikipedia.org/wiki/Neymar
+http://en.wikipedia.org/wiki/Roger_Federer http://en.wikipedia.org/wiki/Rafael_Nadal http://en.wikipedia.org/wiki/Novak_Djokovic
+http://en.wikipedia.org/wiki/Serena_Williams http://en.wikipedia.org/wiki/Venus_Williams http://en.wikipedia.org/wiki/Novak_Djokovic
+http://en.wikipedia.org/wiki/Tiger_Woods http://en.wikipedia.org/wiki/Rory_McIlroy http://en.wikipedia.org/wiki/Serena_Williams
+http://en.wikipedia.org/wiki/Manchester_United_F.C. http://en.wikipedia.org/wiki/Chelsea_F.C. http://en.wikipedia.org/wiki/Parma_F.C.
+http://en.wikipedia.org/wiki/Manchester_City_F.C. http://en.wikipedia.org/wiki/Liverpool_F.C. http://en.wikipedia.org/wiki/PFC_CSKA_Moscow
+http://en.wikipedia.org/wiki/Ryan_Giggs http://en.wikipedia.org/wiki/Paul_Scholes http://en.wikipedia.org/wiki/Karim_Benzema
+http://en.wikipedia.org/wiki/David_Beckham http://en.wikipedia.org/wiki/Wayne_Rooney http://en.wikipedia.org/wiki/Alex_Ferguson
+http://en.wikipedia.org/wiki/Muhammad_Ali http://en.wikipedia.org/wiki/Mike_Tyson http://en.wikipedia.org/wiki/Oscar_De_La_Hoya
+http://en.wikipedia.org/wiki/Usain_Bolt http://en.wikipedia.org/wiki/Yohan_Blake http://en.wikipedia.org/wiki/Kenenisa_Bekele
+http://en.wikipedia.org/wiki/Michael_Jordan http://en.wikipedia.org/wiki/Kobe_Bryant http://en.wikipedia.org/wiki/Reggie_Miller
+
+# Software
+http://en.wikipedia.org/wiki/Windows_XP http://en.wikipedia.org/wiki/Windows_Vista http://en.wikipedia.org/wiki/Mac_OS_X_Leopard
+http://en.wikipedia.org/wiki/Unix http://en.wikipedia.org/wiki/Linux http://en.wikipedia.org/wiki/Windows_XP
+http://en.wikipedia.org/wiki/Emacs http://en.wikipedia.org/wiki/Vi http://en.wikipedia.org/wiki/Linux
+http://en.wikipedia.org/wiki/C%2B%2B http://en.wikipedia.org/wiki/C_(programming_language) http://en.wikipedia.org/wiki/Visual_Basic
+http://en.wikipedia.org/wiki/Java_(programming_language) http://en.wikipedia.org/wiki/C%2B%2B http://en.wikipedia.org/wiki/C_(programming_language)
+http://en.wikipedia.org/wiki/Google_Search http://en.wikipedia.org/wiki/Bing http://en.wikipedia.org/wiki/Facebook
+http://en.wikipedia.org/wiki/MySQL http://en.wikipedia.org/wiki/PostgreSQL http://en.wikipedia.org/wiki/PHP
+
+# Cars
+http://en.wikipedia.org/wiki/Ferrari http://en.wikipedia.org/wiki/Lamborghini http://en.wikipedia.org/wiki/BMW
+http://en.wikipedia.org/wiki/BMW http://en.wikipedia.org/wiki/Audi http://en.wikipedia.org/wiki/Toyota
+http://en.wikipedia.org/wiki/Toyota http://en.wikipedia.org/wiki/Honda http://en.wikipedia.org/wiki/Hyundai
+http://en.wikipedia.org/wiki/Ford_Motor_Company http://en.wikipedia.org/wiki/General_Motors http://en.wikipedia.org/wiki/Volkswagen
+
+# Animal
+http://en.wikipedia.org/wiki/Octopus http://en.wikipedia.org/wiki/Squid http://en.wikipedia.org/wiki/Tuna
+http://en.wikipedia.org/wiki/Bear http://en.wikipedia.org/wiki/Polar_bear http://en.wikipedia.org/wiki/Giant_panda
+http://en.wikipedia.org/wiki/Dinosaur http://en.wikipedia.org/wiki/Crocodile http://en.wikipedia.org/wiki/Ant
+http://en.wikipedia.org/wiki/Caterpillar http://en.wikipedia.org/wiki/Butterfly http://en.wikipedia.org/wiki/Bird
+http://en.wikipedia.org/wiki/Pit_bull http://en.wikipedia.org/wiki/Bulldog http://en.wikipedia.org/wiki/Labrador_Retriever
+http://en.wikipedia.org/wiki/Tiger http://en.wikipedia.org/wiki/Lion http://en.wikipedia.org/wiki/Crocodile
+http://en.wikipedia.org/wiki/Crab http://en.wikipedia.org/wiki/Lobster http://en.wikipedia.org/wiki/Mite
+http://en.wikipedia.org/wiki/Killer_whale http://en.wikipedia.org/wiki/Dolphin http://en.wikipedia.org/wiki/Blue_shark
+http://en.wikipedia.org/wiki/Cat http://en.wikipedia.org/wiki/Dog http://en.wikipedia.org/wiki/Pig
+http://en.wikipedia.org/wiki/Lion http://en.wikipedia.org/wiki/Tiger http://en.wikipedia.org/wiki/Giraffe
+http://en.wikipedia.org/wiki/Hippopotamus http://en.wikipedia.org/wiki/Giraffe http://en.wikipedia.org/wiki/Frog
+
+# Computing
+http://en.wikipedia.org/wiki/Less_(Unix) http://en.wikipedia.org/wiki/More_(command) http://en.wikipedia.org/wiki/Grep
+http://en.wikipedia.org/wiki/Linux http://en.wikipedia.org/wiki/Unix http://en.wikipedia.org/wiki/Microsoft_Windows
+
+# Movies
+http://en.wikipedia.org/wiki/Frozen_(2013_film) http://en.wikipedia.org/wiki/Tangled http://en.wikipedia.org/wiki/Transformers:_Age_of_Extinction
+http://en.wikipedia.org/wiki/Maleficent_(film) http://en.wikipedia.org/wiki/Sleeping_Beauty_(1959_film) http://en.wikipedia.org/wiki/The_Grand_Budapest_Hotel
+http://en.wikipedia.org/wiki/Ice_Age:_Continental_Drift http://en.wikipedia.org/wiki/Ice_Age:_Dawn_of_the_Dinosaurs http://en.wikipedia.org/wiki/Brave_(2012_film)
+http://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_On_Stranger_Tides http://en.wikipedia.org/wiki/The_Lone_Ranger_(2013_film) http://en.wikipedia.org/wiki/Spider-Man_3
+http://en.wikipedia.org/wiki/Pulp_Fiction http://en.wikipedia.org/wiki/Reservoir_Dogs http://en.wikipedia.org/wiki/Inception
+http://en.wikipedia.org/wiki/Jurassic_Park http://en.wikipedia.org/wiki/Jaws_(franchise) http://en.wikipedia.org/wiki/Terminator_(franchise)
+
+# TV series
+http://en.wikipedia.org/wiki/The_Sopranos http://en.wikipedia.org/wiki/The_Wire http://en.wikipedia.org/wiki/The_West_Wing
+http://en.wikipedia.org/wiki/Arrested_Development_(TV_series) http://en.wikipedia.org/wiki/Parks_and_Recreation http://en.wikipedia.org/wiki/Ally_McBeal
+http://en.wikipedia.org/wiki/Friends http://en.wikipedia.org/wiki/How_I_Met_Your_Mother http://en.wikipedia.org/wiki/The_Simpsons
+http://en.wikipedia.org/wiki/Frasier http://en.wikipedia.org/wiki/Cheers http://en.wikipedia.org/wiki/Joey_(TV_series)
+
+# General
+http://en.wikipedia.org/wiki/Online_shopping http://en.wikipedia.org/wiki/E-commerce http://en.wikipedia.org/wiki/Online_banking
+http://en.wikipedia.org/wiki/Payday_loan http://en.wikipedia.org/wiki/Cash_advance http://en.wikipedia.org/wiki/Pawnbroker
+http://en.wikipedia.org/wiki/Semi-acoustic_guitar http://en.wikipedia.org/wiki/Electric_guitar http://en.wikipedia.org/wiki/Sitar
+http://en.wikipedia.org/wiki/Piano http://en.wikipedia.org/wiki/Harpsichord http://en.wikipedia.org/wiki/Melodica
+http://en.wikipedia.org/wiki/Violin http://en.wikipedia.org/wiki/Viola http://en.wikipedia.org/wiki/Tuba
+
+# Games
+http://en.wikipedia.org/wiki/Cards_Against_Humanity http://en.wikipedia.org/wiki/Apples_to_Apples http://en.wikipedia.org/wiki/Taboo_(game)
+http://en.wikipedia.org/wiki/Mafia_(party_game) http://en.wikipedia.org/wiki/Ultimate_Werewolf http://en.wikipedia.org/wiki/Poker
+http://en.wikipedia.org/wiki/Agricola_(board_game) http://en.wikipedia.org/wiki/Carcassonne_(board_game) http://en.wikipedia.org/wiki/Risk_(game)
+http://en.wikipedia.org/wiki/StarCraft http://en.wikipedia.org/wiki/Warcraft http://en.wikipedia.org/wiki/Mass_Effect
+http://en.wikipedia.org/wiki/Counter-Strike http://en.wikipedia.org/wiki/Half-Life_(video_game) http://en.wikipedia.org/wiki/MapleStory
+http://en.wikipedia.org/wiki/Minecraft http://en.wikipedia.org/wiki/Roblox http://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas
+http://en.wikipedia.org/wiki/Super_Mario_(series) http://en.wikipedia.org/wiki/Sonic_the_Hedgehog_(series) http://en.wikipedia.org/wiki/Crazy_Taxi
+http://en.wikipedia.org/wiki/Go_(game) http://en.wikipedia.org/wiki/Shogi http://en.wikipedia.org/wiki/Backgammon
+http://en.wikipedia.org/wiki/Chess http://en.wikipedia.org/wiki/Draughts http://en.wikipedia.org/wiki/Ludo_(board_game)
+
+# Chemistry
+http://en.wikipedia.org/wiki/Hydrogen http://en.wikipedia.org/wiki/Oxygen http://en.wikipedia.org/wiki/Krypton
+http://en.wikipedia.org/wiki/Helium http://en.wikipedia.org/wiki/Lithium http://en.wikipedia.org/wiki/Selenium
+http://en.wikipedia.org/wiki/Barium http://en.wikipedia.org/wiki/Strontium http://en.wikipedia.org/wiki/Neptunium
+http://en.wikipedia.org/wiki/Copper http://en.wikipedia.org/wiki/Iron http://en.wikipedia.org/wiki/Chlorine
+
+# Sports
+http://en.wikipedia.org/wiki/American_football http://en.wikipedia.org/wiki/Rugby_football http://en.wikipedia.org/wiki/Cricket
+http://en.wikipedia.org/wiki/Baseball http://en.wikipedia.org/wiki/Softball http://en.wikipedia.org/wiki/Ice_hockey
+http://en.wikipedia.org/wiki/Salsa_(dance) http://en.wikipedia.org/wiki/Bachata_(dance) http://en.wikipedia.org/wiki/Tango
+http://en.wikipedia.org/wiki/Swing_(dance) http://en.wikipedia.org/wiki/Lindy_Hop http://en.wikipedia.org/wiki/Rumba_(dance)
+http://en.wikipedia.org/wiki/Skiing http://en.wikipedia.org/wiki/Snowboarding http://en.wikipedia.org/wiki/Cycling
+http://en.wikipedia.org/wiki/Boxing http://en.wikipedia.org/wiki/Kickboxing http://en.wikipedia.org/wiki/Tennis
+http://en.wikipedia.org/wiki/Golf http://en.wikipedia.org/wiki/Miniature_golf http://en.wikipedia.org/wiki/Baseball
+
+# Mythology
+http://en.wikipedia.org/wiki/Odin http://en.wikipedia.org/wiki/Thor http://en.wikipedia.org/wiki/Shiva
+
+# Music
+http://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart http://en.wikipedia.org/wiki/Ludwig_van_Beethoven http://en.wikipedia.org/wiki/Georges_Bizet
+http://en.wikipedia.org/wiki/Johann_Sebastian_Bach http://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart http://en.wikipedia.org/wiki/Maurice_Ravel
+http://en.wikipedia.org/wiki/Joseph_Haydn http://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart http://en.wikipedia.org/wiki/Jean_Sibelius
+http://en.wikipedia.org/wiki/Johannes_Brahms http://en.wikipedia.org/wiki/Franz_Schubert http://en.wikipedia.org/wiki/George_Gershwin
+http://en.wikipedia.org/wiki/Claude_Debussy http://en.wikipedia.org/wiki/Maurice_Ravel http://en.wikipedia.org/wiki/Benjamin_Britten
+
+# Mathematics
+http://en.wikipedia.org/wiki/Algebraically_closed_field http://en.wikipedia.org/wiki/Real_closed_field http://en.wikipedia.org/wiki/Vector_field
+http://en.wikipedia.org/wiki/Principia_Mathematica http://en.wikipedia.org/wiki/The_Principles_of_Mathematics http://en.wikipedia.org/wiki/Leviathan_(book)
+http://en.wikipedia.org/wiki/Set_theory http://en.wikipedia.org/wiki/Venn_diagram http://en.wikipedia.org/wiki/Numeral_system
+http://en.wikipedia.org/wiki/Combinatorics http://en.wikipedia.org/wiki/Probability http://en.wikipedia.org/wiki/Linear_programming
+http://en.wikipedia.org/wiki/Graph_theory http://en.wikipedia.org/wiki/Discrete_mathematics http://en.wikipedia.org/wiki/Complex_analysis
+http://en.wikipedia.org/wiki/Information_theory http://en.wikipedia.org/wiki/Coding_theory http://en.wikipedia.org/wiki/Stochastic_calculus
