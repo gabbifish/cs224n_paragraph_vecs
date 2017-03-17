@@ -18,9 +18,11 @@ dimension = 100
 class MySentences(object):
     def __init__(self, dirname):
         self.dirname = dirname
+	self.dir_list = os.listdir(self.dirname)
+	self.dir_list.sort()
  
     def __iter__(self):
-        for fname in os.listdir(self.dirname):
+        for fname in self.dir_list:
             for line in open(os.path.join(self.dirname, fname)):
                 yield line.split()
  
@@ -38,7 +40,7 @@ class MySentences(object):
 #model.save('small_wiki_subset_100_hs_cbow.en.text')
 
 print "loading vectors"
-model = gensim.models.LdaModel.load('small_wiki_subset/small_lda_model')
+model = gensim.models.LdaModel.load('big_lda_model')
 
 ########### Average word vector calculations of testing wiki data #################
 # INPUT: in a single directory, place each scraped article in it's own file. In each file, we will scrape things 
@@ -46,13 +48,15 @@ model = gensim.models.LdaModel.load('small_wiki_subset/small_lda_model')
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
+	self.dir_list = os.listdir(self.dirname)
+	self.dir_list.sort()
  
     def articles(self):
-        for fname in os.listdir(self.dirname):
+        for fname in self.dir_list:
         	file_as_string = open(os.path.join(self.dirname, fname)).read()
         	yield file_as_string.split()
 
-testing_articles = MyArticles('testing_articles/articles')
+testing_articles = MyArticles('../testing_articles/articles')
 
 
 
@@ -97,7 +101,7 @@ for article in testing_articles.articles():
     article = [line.decode('utf-8','ignore').encode("utf-8") for line in article]
 #    break
     clean_test_articles.append(article)
-dictionary = gensim.corpora.Dictionary.load('small_wiki_subset/small_wiki_subset_dict.dict')
+dictionary = gensim.corpora.Dictionary.load('big_wiki_subset_dict.dict')
 #testDataVecs = getAvgFeatureVecs(dictionary, clean_test_articles, model, dimension)
 
 # testDataVecs now holds a 2D matrix of (len(reviews),num_features) 
@@ -113,9 +117,9 @@ correct_count = 0
 # Loop through triplet data 
 num_test_triplets = len(article_map)
 for i in range(0, num_test_triplets):
-    article_1_index = article_map[i][0]
-    article_2_index = article_map[i][1]
-    article_3_index = article_map[i][2]
+    article_1_index = article_map[i][0]+1
+    article_2_index = article_map[i][1]+1
+    article_3_index = article_map[i][2]+1
 	# "The content of URLs one and two should be more similar than the content of URLs two and three"
 	# Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
     dense1 = gensim.matutils.sparse2full(getFeatureVec(dictionary, clean_test_articles, model, article_1_index), model.num_topics)
