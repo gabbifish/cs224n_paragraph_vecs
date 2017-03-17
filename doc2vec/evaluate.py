@@ -40,7 +40,7 @@ print "Loading wiki corpus for training..."
 #model.save('word2vec_default')
 
 print "loading vectors"
-model = gensim.models.Word2Vec.load('small_wiki_subset.en.doc2vec.model')
+model = gensim.models.Word2Vec.load('small_wiki_subset.maya.model')
 
 ########### Average word vector calculations of testing wiki data #################
 # INPUT: in a single directory, place each scraped article in it's own file. In each file, we will scrape things
@@ -48,8 +48,8 @@ model = gensim.models.Word2Vec.load('small_wiki_subset.en.doc2vec.model')
 class MyArticles(object):
     def __init__(self, dirname):
         self.dirname = dirname
-	    self.dirlist = os.listdir(self.dirname)
-	    self.dirlist.sort()
+	self.dirlist = os.listdir(self.dirname)
+	self.dirlist.sort()
 
     def articles(self):
         for fname in self.dirlist:
@@ -138,13 +138,13 @@ correct_count = 0
 # Loop through triplet data
 num_test_triplets = len(article_map)
 for i in range(0, num_test_triplets):
-	article_1_index = article_map[i][0]+1
-	article_2_index = article_map[i][1]+1
-	article_3_index = article_map[i][2]+1
+    article_1_index = article_map[i][0]+1
+    article_2_index = article_map[i][1]+1
+    article_3_index = article_map[i][2]+1
 	# "The content of URLs one and two should be more similar than the content of URLs two and three"
 	# Calculate cosine similarities (This must be done manually since word2vec calculates for specific words)
-    if similarity_unseen_docs(model, clean_test_articles[article_1_index], clean_test_articles[article_2_index]) > similarity_unseen_docs(model, clean_test_articles[article_2_index], clean_test_articles[article_3_index])
+    if similarity_unseen_docs(model, clean_test_articles[article_1_index], clean_test_articles[article_2_index]) > similarity_unseen_docs(model, clean_test_articles[article_2_index], clean_test_articles[article_3_index]):
 	# if abs(1 - spatial.distance.cosine(testDataVecs[article_1_index], testDataVecs[article_2_index])) > abs(1 - spatial.distance.cosine(testDataVecs[article_2_index], testDataVecs[article_3_index])):
-		correct_count += 1
+	correct_count += 1
 
 print "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)

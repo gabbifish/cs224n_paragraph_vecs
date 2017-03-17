@@ -53,7 +53,7 @@ http://en.wikipedia.org/wiki/University_of_California,_Berkeley http://en.wikipe
 http://en.wikipedia.org/wiki/Shanghai_Jiao_Tong_University http://en.wikipedia.org/wiki/Tsinghua_University http://en.wikipedia.org/wiki/University_of_California,_Berkeley
 http://en.wikipedia.org/wiki/University_of_Cambridge http://en.wikipedia.org/wiki/University_of_Oxford http://en.wikipedia.org/wiki/University_of_Michigan
 http://en.wikipedia.org/wiki/Harvard_University http://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology http://en.wikipedia.org/wiki/New_York_University
-http://en.wikipedia.org/wiki/University_of_Toronto http://en.wikipedia.org/wiki/Universit%C3%A9_de_Montr%C3%A9al http://en.wikipedia.org/wiki/University_of_Chicago
+http://en.wikipedia.org/wiki/University_of_Toronto http://en.wikipedia.org/wiki/University_of_Chicago
 
 # Months
 http://en.wikipedia.org/wiki/March http://en.wikipedia.org/wiki/February http://en.wikipedia.org/wiki/July
@@ -99,11 +99,11 @@ http://en.wikipedia.org/wiki/The_Canterbury_Tales http://en.wikipedia.org/wiki/T
 http://en.wikipedia.org/wiki/Great_Expectations http://en.wikipedia.org/wiki/David_Copperfield http://en.wikipedia.org/wiki/Invisible_Man
 http://en.wikipedia.org/wiki/Nineteen_Eighty-Four http://en.wikipedia.org/wiki/Animal_Farm http://en.wikipedia.org/wiki/Dune
 http://en.wikipedia.org/wiki/War_and_Peace http://en.wikipedia.org/wiki/Anna_Karenina http://en.wikipedia.org/wiki/The_Grapes_of_Wrath
-http://en.wikipedia.org/wiki/Harry_Potter http://en.wikipedia.org/wiki/The_Lord_of_the_Rings http://en.wikipedia.org/wiki/Twilight_(series)
-http://en.wikipedia.org/wiki/The_Da_Vinci_Code http://en.wikipedia.org/wiki/Angels_%26_Demons http://en.wikipedia.org/wiki/A_Thousand_Splendid_Suns
+http://en.wikipedia.org/wiki/Harry_Potter http://en.wikipedia.org/wiki/The_Lord_of_the_Rings http://en.wikipedia.org/wiki/Twilight_(novel_series)
+http://en.wikipedia.org/wiki/The_Da_Vinci_Code http://en.wikipedia.org/wiki/Angels_&_Demons http://en.wikipedia.org/wiki/A_Thousand_Splendid_Suns
 http://en.wikipedia.org/wiki/Safe_Haven_(novel) http://en.wikipedia.org/wiki/The_Best_of_Me_(novel) http://en.wikipedia.org/wiki/Hollow_City_(novel)
 http://en.wikipedia.org/wiki/Fifty_Shades_of_Grey http://en.wikipedia.org/wiki/Bared_to_You http://en.wikipedia.org/wiki/The_Hunger_Games_(novel)
-http://en.wikipedia.org/wiki/The_Help http://en.wikipedia.org/wiki/The_Secret_Life_of_Bees http://en.wikipedia.org/wiki/The_Road
+http://en.wikipedia.org/wiki/The_Help http://en.wikipedia.org/wiki/The_Secret_Life_of_Bees_(novel) http://en.wikipedia.org/wiki/The_Road
 http://en.wikipedia.org/wiki/Water_for_Elephants http://en.wikipedia.org/wiki/The_Help http://en.wikipedia.org/wiki/Divergent_(novel)
 
 # Scientists
@@ -133,7 +133,7 @@ http://en.wikipedia.org/wiki/Unix http://en.wikipedia.org/wiki/Linux http://en.w
 http://en.wikipedia.org/wiki/Emacs http://en.wikipedia.org/wiki/Vi http://en.wikipedia.org/wiki/Linux
 http://en.wikipedia.org/wiki/C%2B%2B http://en.wikipedia.org/wiki/C_(programming_language) http://en.wikipedia.org/wiki/Visual_Basic
 http://en.wikipedia.org/wiki/Java_(programming_language) http://en.wikipedia.org/wiki/C%2B%2B http://en.wikipedia.org/wiki/C_(programming_language)
-http://en.wikipedia.org/wiki/Google_Search http://en.wikipedia.org/wiki/Bing http://en.wikipedia.org/wiki/Facebook
+http://en.wikipedia.org/wiki/Google_Search http://en.wikipedia.org/wiki/Bing_(search_engine) http://en.wikipedia.org/wiki/Facebook
 http://en.wikipedia.org/wiki/MySQL http://en.wikipedia.org/wiki/PostgreSQL http://en.wikipedia.org/wiki/PHP
 
 # Cars
@@ -151,7 +151,7 @@ http://en.wikipedia.org/wiki/Pit_bull http://en.wikipedia.org/wiki/Bulldog http:
 http://en.wikipedia.org/wiki/Tiger http://en.wikipedia.org/wiki/Lion http://en.wikipedia.org/wiki/Crocodile
 http://en.wikipedia.org/wiki/Crab http://en.wikipedia.org/wiki/Lobster http://en.wikipedia.org/wiki/Mite
 http://en.wikipedia.org/wiki/Killer_whale http://en.wikipedia.org/wiki/Dolphin http://en.wikipedia.org/wiki/Blue_shark
-http://en.wikipedia.org/wiki/Cat http://en.wikipedia.org/wiki/Dog http://en.wikipedia.org/wiki/Pig
+http://en.wikipedia.org/wiki/Cat http://en.wikipedia.org/wiki/Dog http://en.wikipedia.org/wiki/Domestic_pig
 http://en.wikipedia.org/wiki/Lion http://en.wikipedia.org/wiki/Tiger http://en.wikipedia.org/wiki/Giraffe
 http://en.wikipedia.org/wiki/Hippopotamus http://en.wikipedia.org/wiki/Giraffe http://en.wikipedia.org/wiki/Frog
 
