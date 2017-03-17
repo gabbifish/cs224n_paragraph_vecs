@@ -111,7 +111,7 @@ def getAvgFeatureVecs(reviews, model, num_features):
     return reviewFeatureVecs
 
 def cosine_sim(d1, d2):
-    print 1 - spatial.distance.cosine(d1, d2)
+   # print 1 - spatial.distance.cosine(d1, d2)
     return 1 - spatial.distance.cosine(d1, d2)
 
 
@@ -199,27 +199,21 @@ if __name__ == '__main__':
     #     print globals()['__doc__'] % locals()
     #     sys.exit(1)
     # inp, outp = sys.argv[1:3]
-    inp = '../small_wiki_subset/small_wiki_subset.en.text'
+    inp = '../big_wiki_subset/big_wiki_subset.en.text'
 
 
 
     # Variations #########
     simple_models = [
     # PV-DM w/concatenation - window=5 (both sides) approximates paper's 10-word total window size
-        Doc2Vec(dm=1, docvecs_mapfile="small_wiki_subset.docvecs_map.dmc", dm_concat=1, size=100, window=5, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
+        Doc2Vec(dm=1, docvecs_mapfile="big_wiki_subset.docvecs_map.dmc", dm_concat=1, size=100, window=5, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
     # PV-DBOW 
-        Doc2Vec(dm=0, docvecs_mapfile="small_wiki_subset.docvecs_map.dbow", size=100, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
+        Doc2Vec(dm=0, docvecs_mapfile="big_wiki_subset.docvecs_map.dbow", size=100, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
     # PV-DM w/average
-        Doc2Vec(dm=1, docvecs_mapfile="small_wiki_subset.docvecs_map.dmm", dm_mean=1, size=100, window=10, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
+        Doc2Vec(dm=1, docvecs_mapfile="big_wiki_subset.docvecs_map.dmm", dm_mean=1, size=100, window=10, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
     ]
 
     alldocs = TaggedLineDocument(inp)
-    # speed setup by sharing results of 1st model's vocabulary scan
-    # simple_models[0].build_vocab(alldocs)  # PV-DM/concat requires one special NULL word so it serves as template
-    # print(simple_models[0])
-    # for model in simple_models[1:]:
-    #     model.build_vocab(alldocs)
-    # print(model)
 
     models_by_name = OrderedDict((str(model), model) for model in simple_models)
 
@@ -228,11 +222,11 @@ if __name__ == '__main__':
     #Train all 5 models 
     model_indx = 1
     for name, train_model in models_by_name.items():
-        models_by_name[name] = Doc2Vec.load('small_wiki_subset.' + str(model_indx) + '.model')
+        models_by_name[name] = Doc2Vec.load('big_wiki_subset.' + str(model_indx) + '.model')
         simple_models[model_indx-1] = models_by_name[name]
         # train_model.build_vocab(alldocs)
         # train_model.train(alldocs)
-        # train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
+        # train_model.save('big_wiki_subset.' + str(model_indx) + '.model')
 
         model_indx = model_indx + 1
 
@@ -244,8 +238,8 @@ if __name__ == '__main__':
     print get_accuracy(models_by_name['dbow+dmm'], [simple_models[1], simple_models[2]])
     print get_accuracy(models_by_name['dbow+dmc'], [simple_models[1], simple_models[0]])
 
-    models_by_name['dbow+dmm'].save('small_wiki_subset.' + str(4) + '.model')
-    models_by_name['dbow+dmc'].save('small_wiki_subset.' + str(5) + '.model')
+    models_by_name['dbow+dmm'].save('big_wiki_subset.' + str(4) + '.model')
+    models_by_name['dbow+dmc'].save('big_wiki_subset.' + str(5) + '.model')
 
     print models_by_name.keys()
 
@@ -253,7 +247,7 @@ if __name__ == '__main__':
 
 
 
-    #model = Doc2Vec(TaggedLineDocument(inp), docvecs_mapfile="small_wiki_subset.docvecs_map", size=400, window=5, min_count=2, workers=multiprocessing.cpu_count())
+    #model = Doc2Vec(TaggedLineDocument(inp), docvecs_mapfile="big_wiki_subset.docvecs_map", size=400, window=5, min_count=2, workers=multiprocessing.cpu_count())
 
     # trim unneeded model memory = use (much) less RAM
     #model.init_sims(replace=True)
