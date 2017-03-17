@@ -110,7 +110,12 @@ def getAvgFeatureVecs(reviews, model, num_features):
        counter = counter + 1.
     return reviewFeatureVecs
 
-def get_accuracy(model):
+def cosine_sim(d1, d2):
+   # print 1 - spatial.distance.cosine(d1, d2)
+    return 1 - spatial.distance.cosine(d1, d2)
+
+
+def get_accuracy(model, model_pair):
     # ****************************************************************
     # Calculate average feature vectors for testing set
 
@@ -119,10 +124,10 @@ def get_accuracy(model):
     clean_test_articles = []
     count = 0
     for article in testing_articles.articles():
-        print count
+        #print count
         count = count + 1
         clean_test_articles.append(article)
-    testDataVecs = getAvgFeatureVecs(clean_test_articles, model, dimension)
+    #testDataVecs = getAvgFeatureVecs(clean_test_articles, model, dimension)
 
     # testDataVecs now holds a 2D matrix of (len(reviews),num_features)
     # the average feature vector for each article!
@@ -147,25 +152,34 @@ def get_accuracy(model):
         article1_wl = clean_test_articles[article_1_index]
         article2_wl = clean_test_articles[article_2_index]
         article3_wl = clean_test_articles[article_3_index]
+
+        # model_1 = model_pair[0].infer_vector(np.asarray(clean_test_articles[article_1_index])) 
+        # model_2 = model_pair[1].infer_vector(clean_test_articles[article_1_index]) 
         try:
-            article_1_vec = model.infer_vector(clean_test_articles[article_1_index])
+            #article_1_vec = np.concatenate([model_1, model_2])
+            article_1_vec = model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
+
         except Exception, e:
             print "article 1 fucked up!"
+            print e
             print clean_test_articles[article_1_index]
 
         try:
             article_2_vec = model.infer_vector(clean_test_articles[article_2_index])
         except Exception, e: 
             print "article 2 fucked up!"
-            print clean_test_articles[article_2_index]
+            #print clean_test_articles[article_2_index]
 
         try:
             article_3_vec = model.infer_vector(clean_test_articles[article_3_index])
         except Exception, e:
             print "article 3 fucked up!"
-            print clean_test_articles[article_3_index]
+            #print clean_test_articles[article_3_index]
         
-        if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
+        # if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
+        #     correct_count += 1
+
+        if cosine_sim(article_1_vec, article_2_vec) > cosine_sim(article_2_vec, article_3_vec):
             correct_count += 1
 
     return "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
@@ -185,27 +199,21 @@ if __name__ == '__main__':
     #     print globals()['__doc__'] % locals()
     #     sys.exit(1)
     # inp, outp = sys.argv[1:3]
-    inp = '../small_wiki_subset/small_wiki_subset.en.text'
+    inp = '../big_wiki_subset/big_wiki_subset.en.text'
 
 
 
     # Variations #########
     simple_models = [
     # PV-DM w/concatenation - window=5 (both sides) approximates paper's 10-word total window size
-        Doc2Vec(dm=1, docvecs_mapfile="small_wiki_subset.docvecs_map.dmc", dm_concat=1, size=100, window=5, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
+        Doc2Vec(dm=1, docvecs_mapfile="big_wiki_subset.docvecs_map.dmc", dm_concat=1, size=100, window=5, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
     # PV-DBOW 
-        Doc2Vec(dm=0, docvecs_mapfile="small_wiki_subset.docvecs_map.dbow", size=100, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
+        Doc2Vec(dm=0, docvecs_mapfile="big_wiki_subset.docvecs_map.dbow", size=100, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
     # PV-DM w/average
-        Doc2Vec(dm=1, docvecs_mapfile="small_wiki_subset.docvecs_map.dmm", dm_mean=1, size=100, window=10, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
+        Doc2Vec(dm=1, docvecs_mapfile="big_wiki_subset.docvecs_map.dmm", dm_mean=1, size=100, window=10, negative=5, hs=0, min_count=2, workers=multiprocessing.cpu_count()),
     ]
 
     alldocs = TaggedLineDocument(inp)
-    # speed setup by sharing results of 1st model's vocabulary scan
-    # simple_models[0].build_vocab(alldocs)  # PV-DM/concat requires one special NULL word so it serves as template
-    # print(simple_models[0])
-    # for model in simple_models[1:]:
-    #     model.build_vocab(alldocs)
-    # print(model)
 
     models_by_name = OrderedDict((str(model), model) for model in simple_models)
 
@@ -214,16 +222,13 @@ if __name__ == '__main__':
     #Train all 5 models 
     model_indx = 1
     for name, train_model in models_by_name.items():
-        # print name
-        # if model_indx is not 4 and model_indx is not 5:
+        # models_by_name[name] = Doc2Vec.load('big_wiki_subset.' + str(model_indx) + '.model')
+        # simple_models[model_indx-1] = models_by_name[name]
         train_model.build_vocab(alldocs)
         train_model.train(alldocs)
-        #train_model.init_sims(replace=True)
-        #if model_indx is not 4 and model_indx is not 5:
-        train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
-        #else: 
-        #    print "calculating accuraccy"
-        #    print get_accuracy(train_model)
+        train_model.save('big_wiki_subset.' + str(model_indx) + '.model')
+        simple_models[model_indx-1] = train_model
+
         model_indx = model_indx + 1
 
 
@@ -231,11 +236,11 @@ if __name__ == '__main__':
     models_by_name['dbow+dmc'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[0]])
 
 
-    print get_accuracy(models_by_name['dbow+dmm'])
-    print get_accuracy(models_by_name['dbow+dmc'])
+    print get_accuracy(models_by_name['dbow+dmm'], [simple_models[1], simple_models[2]])
+    print get_accuracy(models_by_name['dbow+dmc'], [simple_models[1], simple_models[0]])
 
-    models_by_name['dbow+dmm'].save('small_wiki_subset.' + str(4) + '.model')
-    models_by_name['dbow+dmc'].save('small_wiki_subset.' + str(5) + '.model')
+    models_by_name['dbow+dmm'].save('big_wiki_subset.' + str(4) + '.model')
+    models_by_name['dbow+dmc'].save('big_wiki_subset.' + str(5) + '.model')
 
     print models_by_name.keys()
 
@@ -243,7 +248,7 @@ if __name__ == '__main__':
 
 
 
-    #model = Doc2Vec(TaggedLineDocument(inp), docvecs_mapfile="small_wiki_subset.docvecs_map", size=400, window=5, min_count=2, workers=multiprocessing.cpu_count())
+    #model = Doc2Vec(TaggedLineDocument(inp), docvecs_mapfile="big_wiki_subset.docvecs_map", size=400, window=5, min_count=2, workers=multiprocessing.cpu_count())
 
     # trim unneeded model memory = use (much) less RAM
     #model.init_sims(replace=True)
