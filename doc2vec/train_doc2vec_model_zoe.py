@@ -3,6 +3,7 @@
 import logging
 import os.path
 import sys
+import scipy
 import multiprocessing
 
 from gensim.corpora import  WikiCorpus
@@ -110,6 +111,10 @@ def getAvgFeatureVecs(reviews, model, num_features):
        counter = counter + 1.
     return reviewFeatureVecs
 
+def cosine_sim(d1, d2):
+    scipy.spatial.distance.cosine(d1, d1)
+
+
 def get_accuracy(model):
     # ****************************************************************
     # Calculate average feature vectors for testing set
@@ -165,7 +170,10 @@ def get_accuracy(model):
             print "article 3 fucked up!"
             print clean_test_articles[article_3_index]
         
-        if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
+        # if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
+        #     correct_count += 1
+
+        if cosine_sim(article_1_vec, article_2_vec) > cosine_sim(article_2_vec, article_3_vec):
             correct_count += 1
 
     return "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
@@ -214,16 +222,11 @@ if __name__ == '__main__':
     #Train all 5 models 
     model_indx = 1
     for name, train_model in models_by_name.items():
-        # print name
-        # if model_indx is not 4 and model_indx is not 5:
-        train_model.build_vocab(alldocs)
-        train_model.train(alldocs)
-        #train_model.init_sims(replace=True)
-        #if model_indx is not 4 and model_indx is not 5:
-        train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
-        #else: 
-        #    print "calculating accuraccy"
-        #    print get_accuracy(train_model)
+        models_by_name[name] = Doc2Vec.load('small_wiki_subset.' + str(model_indx) + '.model')
+        # train_model.build_vocab(alldocs)
+        # train_model.train(alldocs)
+        # train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
+
         model_indx = model_indx + 1
 
 
