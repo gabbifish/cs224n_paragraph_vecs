@@ -115,7 +115,7 @@ def cosine_sim(d1, d2):
     scipy.spatial.distance.cosine(d1, d1)
 
 
-def get_accuracy(model):
+def get_accuracy(model, model_pair):
     # ****************************************************************
     # Calculate average feature vectors for testing set
 
@@ -153,7 +153,8 @@ def get_accuracy(model):
         article2_wl = clean_test_articles[article_2_index]
         article3_wl = clean_test_articles[article_3_index]
         try:
-            article_1_vec = model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
+            article_1_vec = np.concatenate([model.infer_vector(clean_test_articles[article_1_index]) for model in model_pair])
+            #model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
 
         except Exception, e:
             print "article 1 fucked up!"
@@ -236,8 +237,8 @@ if __name__ == '__main__':
     models_by_name['dbow+dmc'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[0]])
 
 
-    print get_accuracy(models_by_name['dbow+dmm'])
-    print get_accuracy(models_by_name['dbow+dmc'])
+    print get_accuracy(models_by_name['dbow+dmm'], [simple_models[1], simple_models[2]])
+    print get_accuracy(models_by_name['dbow+dmc'], [simple_models[1], simple_models[0]])
 
     models_by_name['dbow+dmm'].save('small_wiki_subset.' + str(4) + '.model')
     models_by_name['dbow+dmc'].save('small_wiki_subset.' + str(5) + '.model')
