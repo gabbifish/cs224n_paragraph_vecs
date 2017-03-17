@@ -122,7 +122,7 @@ def get_accuracy(model):
         print count
         count = count + 1
         clean_test_articles.append(article)
-    testDataVecs = getAvgFeatureVecs(clean_test_articles, model, dimension)
+    #testDataVecs = getAvgFeatureVecs(clean_test_articles, model, dimension)
 
     # testDataVecs now holds a 2D matrix of (len(reviews),num_features)
     # the average feature vector for each article!
