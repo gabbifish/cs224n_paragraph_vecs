@@ -228,10 +228,10 @@ if __name__ == '__main__':
     #Train all 5 models 
     model_indx = 1
     for name, train_model in models_by_name.items():
-        models_by_name[name] = Doc2Vec.load('small_wiki_subset.' + str(model_indx) + '.model')
-        # train_model.build_vocab(alldocs)
-        # train_model.train(alldocs)
-        # train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
+        #models_by_name[name] = Doc2Vec.load('small_wiki_subset.' + str(model_indx) + '.model')
+        train_model.build_vocab(alldocs)
+        train_model.train(alldocs)
+        train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
 
         model_indx = model_indx + 1
 
