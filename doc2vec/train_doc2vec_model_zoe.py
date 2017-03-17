@@ -156,19 +156,19 @@ def get_accuracy(model):
             article_1_vec = model.infer_vector(clean_test_articles[article_1_index])
         except Exception, e:
             print "article 1 fucked up!"
-            print clean_test_articles[article_1_index]
+            #print clean_test_articles[article_1_index]
 
         try:
             article_2_vec = model.infer_vector(clean_test_articles[article_2_index])
         except Exception, e: 
             print "article 2 fucked up!"
-            print clean_test_articles[article_2_index]
+            #print clean_test_articles[article_2_index]
 
         try:
             article_3_vec = model.infer_vector(clean_test_articles[article_3_index])
         except Exception, e:
             print "article 3 fucked up!"
-            print clean_test_articles[article_3_index]
+            #print clean_test_articles[article_3_index]
         
         # if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
         #     correct_count += 1
