@@ -3,7 +3,6 @@
 import logging
 import os.path
 import sys
-import scipy
 import multiprocessing
 
 from gensim.corpora import  WikiCorpus
@@ -112,7 +111,7 @@ def getAvgFeatureVecs(reviews, model, num_features):
     return reviewFeatureVecs
 
 def cosine_sim(d1, d2):
-    scipy.spatial.distance.cosine(d1, d1)
+    return spatial.distance.cosine(d1, d1)
 
 
 def get_accuracy(model, model_pair):
