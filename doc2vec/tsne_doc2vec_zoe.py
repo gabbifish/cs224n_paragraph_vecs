@@ -43,7 +43,7 @@ class doc2vec_tsne(object):
     def speech_vectors(self):
     	print "Generating vectors for test vectors."
 	l = NUM_ARTICLES # num articles--this is ~450?
-    	wiki_entry_matrix = np.zeros(shape = (l, 400))
+    	wiki_entry_matrix = np.zeros(shape = (l, 200))
 
         categories_list = []
         curr_cat = "" # current category to map article indices in wiki_entry_matrix to.
