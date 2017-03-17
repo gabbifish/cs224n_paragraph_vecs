@@ -36,7 +36,7 @@ class doc2vec_tsne(object):
     def __init__(self):
     		print "Loading Doc2Vec model(s)."
 		self.model1 = Doc2Vec.load('big_wiki_subset.1.model', mmap=None) # replace with doc2vec model
-    	self.model2 = Doc2Vec.load('big_wiki_subset.2.model', mmap=None)
+        	self.model2 = Doc2Vec.load('big_wiki_subset.2.model', mmap=None)
         	# self.data =  json.loads(open('../big_wiki_subset/big_wiki_subset.en.txt','r').read()) ## a list
     		# self.processed_speeches = open('all_speech.txt','r')
 
