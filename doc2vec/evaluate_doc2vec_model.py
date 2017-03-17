@@ -40,7 +40,7 @@ print "Loading wiki corpus for training..."
 #model.save('word2vec_default')
 
 print "loading vectors"
-model = gensim.models.Word2Vec.load('small_wiki_subset.3.model')
+model = gensim.models.Word2Vec.load('big_wiki_subset.3.model')
 
 ########### Average word vector calculations of testing wiki data #################
 # INPUT: in a single directory, place each scraped article in it's own file. In each file, we will scrape things
