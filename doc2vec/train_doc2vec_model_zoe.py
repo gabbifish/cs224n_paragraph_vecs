@@ -156,6 +156,7 @@ def get_accuracy(model):
             article_1_vec = model.infer_vector(clean_test_articles[article_1_index])
         except Exception, e:
             print "article 1 fucked up!"
+            print e
             print clean_test_articles[article_1_index]
 
         try:
