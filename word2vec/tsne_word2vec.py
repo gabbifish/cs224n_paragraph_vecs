@@ -36,8 +36,9 @@ class word2vec_tsne(object):
     def __init__(self):
     		print "Loading Word2Vec model."
 		self.model = Word2Vec.load('big_wiki_subset.en.word2vec.model', mmap=None)
-        self.num_features = 100
-    		# self.data =  json.loads(open('../big_wiki_subset/big_wiki_subset.en.txt','r').read()) ## a list
+	        self.num_features = 100
+    		print "Word2Vec model loaded."
+		# self.data =  json.loads(open('../big_wiki_subset/big_wiki_subset.en.txt','r').read()) ## a list
     		# self.processed_speeches = open('all_speech.txt','r')
 
     def makeFeatureVec(self, words):
@@ -88,13 +89,13 @@ class word2vec_tsne(object):
 
                 # Generate vector for each file, set it as row vector.
                 for file in files:
-		            filename = file.replace('http://en.wikipedia.org/wiki/', '') + '.txt'
+	            filename = file.replace('http://en.wikipedia.org/wiki/', '') + '.txt'
                     text = open('../testing_articles/articles/'+filename, 'r')
                     text = text.read().replace('\n', '').split()
 
-                    wiki_entry_matrix[article_count,] = makeFeatureVec(text, self.model) # generate vector for newdoc and save in matrix for graphing
+                    wiki_entry_matrix[article_count,] = self.makeFeatureVec(text) # generate vector for newdoc and save in matrix for graphing
                     article_indices.append(article_count) # article_count serves as index of docvec
-                    if article_count % 50 == 0:
+		    if article_count % 50 == 0:
                         print "Processed " + str(article_count) + "th article into vector form..."
 		    article_count += 1
 
