@@ -156,7 +156,7 @@ def get_accuracy(model, model_pair):
         # model_2 = model_pair[1].infer_vector(clean_test_articles[article_1_index]) 
         try:
             #article_1_vec = np.concatenate([model_1, model_2])
-            model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
+            article_1_vec = model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
 
         except Exception, e:
             print "article 1 fucked up!"
