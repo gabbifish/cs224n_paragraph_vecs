@@ -209,27 +209,37 @@ if __name__ == '__main__':
 
     models_by_name = OrderedDict((str(model), model) for model in simple_models)
 
-    models_by_name['dbow+dmm'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[2]])
-    models_by_name['dbow+dmc'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[0]])
 
-    print models_by_name.keys()
 
     #Train all 5 models 
     model_indx = 1
     for name, train_model in models_by_name.items():
-        print name
-        if model_indx is not 4 and model_indx is not 5:
-            train_model.build_vocab(alldocs)
+        # print name
+        # if model_indx is not 4 and model_indx is not 5:
+        train_model.build_vocab(alldocs)
         train_model.train(alldocs)
         #train_model.init_sims(replace=True)
-        if model_indx is not 4 and model_indx is not 5:
-            train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
-        else: 
-            print "calculating accuraccy"
-            print get_accuracy(train_model)
+        #if model_indx is not 4 and model_indx is not 5:
+        train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
+        #else: 
+        #    print "calculating accuraccy"
+        #    print get_accuracy(train_model)
         model_indx = model_indx + 1
 
 
+    models_by_name['dbow+dmm'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[2]])
+    models_by_name['dbow+dmc'] = ConcatenatedDoc2Vec([simple_models[1], simple_models[0]])
+
+
+    print get_accuracy(models_by_name['dbow+dmm'])
+    print get_accuracy(models_by_name['dbow+dmc'])
+
+    models_by_name['dbow+dmm'].save('small_wiki_subset.' + str(4) + '.model')
+    models_by_name['dbow+dmc'].save('small_wiki_subset.' + str(5) + '.model')
+
+    print models_by_name.keys()
+
+    # to concat the two models, we need to 
 
 
 
