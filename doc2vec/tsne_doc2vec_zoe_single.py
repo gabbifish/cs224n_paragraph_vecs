@@ -42,7 +42,7 @@ class doc2vec_tsne(object):
     def speech_vectors(self):
     	print "Generating vectors for test vectors."
 	l = NUM_ARTICLES # num articles--this is ~450?
-    	wiki_entry_matrix = np.zeros(shape = (l, 400))
+    	wiki_entry_matrix = np.zeros(shape = (l, 100))
 
         categories_list = []
         curr_cat = "" # current category to map article indices in wiki_entry_matrix to.
@@ -131,7 +131,7 @@ class doc2vec_tsne(object):
                 PathEffects.Normal()])
             txts.append(txt)
 
-        plt.savefig('images/doc2vec_tsne-generated.png', dpi=120)
+        plt.savefig('images/doc2vec__zoe_dmm_tsne-generated.png', dpi=120)
 
         return f, ax, sc, txts
 
