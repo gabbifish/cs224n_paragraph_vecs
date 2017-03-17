@@ -152,8 +152,11 @@ def get_accuracy(model, model_pair):
         article1_wl = clean_test_articles[article_1_index]
         article2_wl = clean_test_articles[article_2_index]
         article3_wl = clean_test_articles[article_3_index]
+
+        model_1 = model_pair[0].infer_vector(clean_test_articles[article_1_index]) 
+        model_2 = model_pair[1].infer_vector(clean_test_articles[article_1_index]) 
         try:
-            article_1_vec = np.concatenate(np.asarray([model.infer_vector(np.asarray(clean_test_articles[article_1_index])) for model in model_pair]))
+            article_1_vec = np.concatenate([model_1, model_2])
             #model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
 
         except Exception, e:
