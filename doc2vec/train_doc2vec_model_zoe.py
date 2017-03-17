@@ -111,7 +111,8 @@ def getAvgFeatureVecs(reviews, model, num_features):
     return reviewFeatureVecs
 
 def cosine_sim(d1, d2):
-    return spatial.distance.cosine(d1, d1)
+    print 1 - spatial.distance.cosine(d1, d1)
+    return 1 - spatial.distance.cosine(d1, d1)
 
 
 def get_accuracy(model, model_pair):
