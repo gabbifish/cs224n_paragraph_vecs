@@ -123,7 +123,7 @@ def get_accuracy(model, model_pair):
     clean_test_articles = []
     count = 0
     for article in testing_articles.articles():
-        print count
+        #print count
         count = count + 1
         clean_test_articles.append(article)
     #testDataVecs = getAvgFeatureVecs(clean_test_articles, model, dimension)
@@ -152,11 +152,11 @@ def get_accuracy(model, model_pair):
         article2_wl = clean_test_articles[article_2_index]
         article3_wl = clean_test_articles[article_3_index]
 
-        model_1 = model_pair[0].infer_vector(np.asarray(clean_test_articles[article_1_index])) 
-        model_2 = model_pair[1].infer_vector(clean_test_articles[article_1_index]) 
+        # model_1 = model_pair[0].infer_vector(np.asarray(clean_test_articles[article_1_index])) 
+        # model_2 = model_pair[1].infer_vector(clean_test_articles[article_1_index]) 
         try:
-            article_1_vec = np.concatenate([model_1, model_2])
-            #model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
+            #article_1_vec = np.concatenate([model_1, model_2])
+            model.infer_vector(np.asarray(clean_test_articles[article_1_index]))
 
         except Exception, e:
             print "article 1 fucked up!"
@@ -175,11 +175,11 @@ def get_accuracy(model, model_pair):
             print "article 3 fucked up!"
             #print clean_test_articles[article_3_index]
         
-        # if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
-        #     correct_count += 1
-
-        if cosine_sim(article_1_vec, article_2_vec) > cosine_sim(article_2_vec, article_3_vec):
+        if model.docvecs.similarity_unseen_docs(model, article1_wl, article2_wl) > model.docvecs.similarity_unseen_docs(model, article2_wl, article3_wl):
             correct_count += 1
+
+        # if cosine_sim(article_1_vec, article_2_vec) > cosine_sim(article_2_vec, article_3_vec):
+        #     correct_count += 1
 
     return "ACCURACY: %f" % (correct_count*1.0/num_test_triplets)
 
@@ -227,10 +227,10 @@ if __name__ == '__main__':
     #Train all 5 models 
     model_indx = 1
     for name, train_model in models_by_name.items():
-        #models_by_name[name] = Doc2Vec.load('small_wiki_subset.' + str(model_indx) + '.model')
-        train_model.build_vocab(alldocs)
-        train_model.train(alldocs)
-        train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
+        models_by_name[name] = Doc2Vec.load('small_wiki_subset.' + str(model_indx) + '.model')
+        # train_model.build_vocab(alldocs)
+        # train_model.train(alldocs)
+        # train_model.save('small_wiki_subset.' + str(model_indx) + '.model')
 
         model_indx = model_indx + 1
 
